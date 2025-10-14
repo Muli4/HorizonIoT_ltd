@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Horizon IoT Ltd | Innovative IoT & Fleet Management Solutions</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Box Icons-->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="images/logo.png" type="image/x-icon" />
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+
+    <!-- ===== Top Bar ===== -->
+    <div class="header-top">
+      <div class="container header-top__container">
+        <div class="header-top__contact">
+          <a href="tel:+254700780203"><i class="fas fa-phone-alt"></i> +254 700 780 203</a>
+          <span class="separator">|</span>
+          <a href="tel:+254722339434">+254 722 339 434</a>
+          <span class="separator">|</span>
+          <a href="mailto:info@horizoniot.com"><i class="fas fa-envelope"></i> info@horizoniot.com</a>
+        </div>
+        <div class="header-top__social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Main Navigation ===== -->
+    <div class="header-main container">
+      <a href="index.html" class="header-main__logo">
+        <img src="images/logo.png" alt="Horizon IoT Ltd Logo" class="logo-img" />
+        <span class="logo-text">Horizon IoT Ltd</span>
+      </a>
+
+      <nav class="nav" id="main-navigation">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html" class="nav__link nav__link--active">Home</a></li>
+          <li class="nav__item"><a href="about.html" class="nav__link">About Us</a></li>
+
+          <!-- Dropdown Menu -->
+          <li class="nav__item nav__item--dropdown">
+            <a href="#" class="nav__link dropdown-toggle">Products <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-menu__item"><a href="accessories.html">Accessories</a></li>
+
+              <li class="dropdown-menu__item dropdown-menu__item--submenu">
+                <a href="#">Dash Cameras <i class="fas fa-angle-right"></i></a>
+                <ul class="submenu">
+                  <li><a href="mettax.html">MettaX</a></li>
+                  <li><a href="#">JimilIoT</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown-menu__item dropdown-menu__item--submenu">
+                <a href="#">Fuel Sensors <i class="fas fa-angle-right"></i></a>
+                <ul class="submenu">
+                  <li><a href="escort.html">Escort</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown-menu__item dropdown-menu__item--submenu">
+                <a href="#">Trackers <i class="fas fa-angle-right"></i></a>
+                <ul class="submenu">
+                  <li><a href="telnotika.html">Teltonika</a></li>
+                  <li><a href="concox.html">Concox</a></li>
+                  <li><a href="#">Ruptella</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Toggle -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
+        <i class="fas fa-bars open-icon"></i>
+        <i class="fas fa-times close-icon"></i>
+      </button>
+    </div>
+  </header>
+
+<section id="hero-slider" class="hero-slider">
+  <div class="slider__wrapper">
+    
+    <!-- Slide 1 -->
+    <div class="slider__slide active" data-index="0">
+      <div class="slider__overlay"></div>
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80" 
+           alt="Cutting Edge Telematics & IoT Solutions" class="slider__bg">
+      <div class="slider__content container">
+        <h1 class="slider__title">
+          Cutting Edge <span class="slider__highlight">Telematics</span> & IoT Solutions
+        </h1>
+        <p class="slider__subtitle">
+          Empowering businesses with smart, data-driven tracking systems for efficient, secure, and sustainable operations.
+        </p>
+        <ul class="slider__points">
+          <li>Advanced GPS and sensor integrations</li>
+          <li>Cloud-based dashboards with AI analytics</li>
+          <li>Trusted by logistics, transport, and energy sectors</li>
+        </ul>
+        <div class="slider__cta">
+          <a href="about.html" class="btn btn--primary">Learn More</a>
+          <a href="contact.html" class="btn btn--outline">Contact Us</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slider__slide" data-index="1">
+      <div class="slider__overlay"></div>
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80" 
+           alt="Real-Time Fleet Tracking & Monitoring" class="slider__bg">
+      <div class="slider__content container">
+        <h1 class="slider__title">
+          Real-Time Fleet <span class="slider__highlight">Tracking</span> & Monitoring
+        </h1>
+        <p class="slider__subtitle">
+          Stay in control of your operations with instant insights and location data accessible anywhere, anytime.
+        </p>
+        <ul class="slider__points">
+          <li>Live vehicle positions and route playback</li>
+          <li>Driver behavior monitoring and scoring</li>
+          <li>Automated reports and maintenance alerts</li>
+        </ul>
+        <div class="slider__cta">
+          <a href="products.html" class="btn btn--primary">Explore Products</a>
+          <a href="contact.html" class="btn btn--outline">Talk to Us</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slider__slide" data-index="2">
+      <div class="slider__overlay"></div>
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80" 
+           alt="Smart Fuel Sensors & Efficiency" class="slider__bg">
+      <div class="slider__content container">
+        <h1 class="slider__title">
+          Smart <span class="slider__highlight">Fuel Sensors</span> 
+        </h1>
+        <p class="slider__subtitle">
+          Detect fuel theft, track consumption, and enhance fleet economy with high-precision telemetry sensors.
+        </p>
+        <ul class="slider__points">
+          <li>Escort TD150 BLE and CAN-based sensors</li>
+          <li>Real-time alerts for fuel theft or irregular usage</li>
+          <li>Seamless dashboard integration for analytics</li>
+        </ul>
+        <div class="slider__cta">
+          <a href="products.html" class="btn btn--primary">View Sensors</a>
+          <a href="contact.html" class="btn btn--outline">Request a Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slider__slide" data-index="3">
+      <div class="slider__overlay"></div>
+      <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1600&q=80" 
+           alt="AI-Driven Analytics & Insights" class="slider__bg">
+      <div class="slider__content container">
+        <h1 class="slider__title">
+          AI-Driven <span class="slider__highlight">Analytics</span> & Insights
+        </h1>
+        <p class="slider__subtitle">
+          Transform raw operational data into actionable intelligence for smarter, faster decision-making.
+        </p>
+        <ul class="slider__points">
+          <li>Predictive maintenance alerts</li>
+          <li>Operational efficiency metrics</li>
+          <li>Custom business intelligence dashboards</li>
+        </ul>
+        <div class="slider__cta">
+          <a href="solutions.html" class="btn btn--primary">Our Solutions</a>
+          <a href="contact.html" class="btn btn--outline">Get Started</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="slider__slide" data-index="4">
+      <div class="slider__overlay"></div>
+      <img src="https://images.unsplash.com/photo-1567443024551-f3e3cc2b0a9c?auto=format&fit=crop&w=1600&q=80" 
+           alt="IoT Automation for Smart Operations" class="slider__bg">
+      <div class="slider__content container">
+        <h1 class="slider__title">
+          Connected <span class="slider__highlight">IoT Automation</span> for Smarter Operations
+        </h1>
+        <p class="slider__subtitle">
+          Unify your devices, sensors, and systems under one intelligent IoT ecosystem powered by Horizon.
+        </p>
+        <ul class="slider__points">
+          <li>End-to-end integration of IoT devices</li>
+          <li>Scalable cloud architecture</li>
+          <li>Real-time alerts and control features</li>
+        </ul>
+        <div class="slider__cta">
+          <a href="portfolio.html" class="btn btn--primary">See Portfolio</a>
+          <a href="contact.html" class="btn btn--outline">Connect Now</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Dots Navigation -->
+  <div class="slider__dots"></div>
+</section>
+
+
+<section id="about-horizon" class="about-section">
+  <div class="bg-overlay"></div>
+  <div class="animated-bg"></div>
+
+  <div class="container about-grid">
+    <!-- About Text -->
+    <div class="about-text" data-animate="fade-up">
+      <h2 class="about-title">
+        About <span class="highlight">Horizon IoT</span>
+      </h2>
+      <p class="about-description">
+        Horizon IoT Ltd is a leading provider of cutting-edge telematics and Internet of Things (IoT)
+        solutions across East Africa and beyond. We specialize in providing real-time tracking,
+        intelligent data analytics, and connected automation that empower businesses to operate
+        efficiently, securely, and sustainably.
+      </p>
+      <p class="about-description">
+        Our comprehensive portfolio includes GPS tracking, fuel management, asset monitoring,
+        and driver behavior analysis — all integrated into one seamless IoT ecosystem designed
+        to simplify and optimize fleet operations.
+      </p>
+    </div>
+
+    <!-- Portfolio Cards -->
+    <div class="features-grid">
+      <div class="feature-card" data-animate="fade-up">
+        <i class="bx bx-car feature-icon"></i>
+        <h3>Vehicle Trackers</h3>
+        <p>
+          Reliable GPS tracking devices like <strong>Teltonika</strong> and <strong>Concox</strong> for
+          real-time location monitoring, geofencing, and route optimization.
+        </p>
+      </div>
+
+      <div class="feature-card" data-animate="fade-up">
+        <i class="bx bx-gas-pump feature-icon"></i>
+        <h3>Fuel Sensors</h3>
+        <p>
+          Advanced <strong>Escort TD150 BLE</strong> and <strong>TD BLE</strong> sensors to monitor
+          fuel levels, detect pilferage, and ensure precise fuel usage analytics.
+        </p>
+      </div>
+
+      <div class="feature-card" data-animate="fade-up">
+        <i class="bx bx-cctv feature-icon"></i>
+        <h3>Dash Cameras & MDVR</h3>
+        <p>
+          Dual-view cameras and mobile DVR systems for driver accountability, safety recording,
+          and fleet surveillance in real time.
+        </p>
+      </div>
+
+      <div class="feature-card" data-animate="fade-up">
+        <i class="bx bx-package feature-icon"></i>
+        <h3>Asset Tracking</h3>
+        <p>
+          Portable asset tracking devices with long battery life for containers, cargo, and
+          valuable equipment monitoring anywhere, anytime.
+        </p>
+      </div>
+
+      <div class="feature-card" data-animate="fade-up">
+        <i class="bx bx-chip feature-icon"></i>
+        <h3>IoT Solutions</h3>
+        <p>
+          Smart sensors and telemetry modules integrated into a single cloud platform — bringing
+          automation and control to your entire operation.
+        </p>
+      </div>
+
+      <div class="feature-card" data-animate="fade-up">
+        <i class="bx bx-line-chart feature-icon"></i>
+        <h3>Analytics & Insights</h3>
+        <p>
+          Comprehensive dashboards that visualize driver behavior, fleet performance,
+          and fuel trends for smarter, data-driven decisions.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how-we-do-it" class="process-section">
+  <div class="process-overlay"></div>
+
+  <div class="container process-wrapper">
+    <div class="process-header" data-animate="fade-up">
+      <h2 class="process-title">
+        How <span class="highlight">We Do It</span>
+      </h2>
+      <p class="process-subtitle">
+        At Horizon IoT, we bring intelligence to operations through research, seamless integration,
+        and continuous optimization — transforming data into decisions that drive progress.
+      </p>
+    </div>
+
+    <div class="process-grid">
+      <!-- Step 1 -->
+      <div class="process-card" data-animate="fade-up">
+        <div class="process-icon-box">
+          <i class="bx bx-brain process-icon"></i>
+        </div>
+        <h3 class="process-step-title">1. Research & Innovation</h3>
+        <p class="process-step-desc">
+          We begin by analyzing real-world challenges and designing custom IoT architectures that blend
+          smart sensors, AI, and automation — tailored for your goals.
+        </p>
+        <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1000&q=80"
+             alt="Smart IoT sensor hardware board" class="process-img">
+      </div>
+
+      <!-- Step 2 -->
+      <div class="process-card" data-animate="fade-up" data-delay="200">
+        <div class="process-icon-box">
+          <i class="bx bx-network-chart process-icon"></i>
+        </div>
+        <h3 class="process-step-title">2. Integration & Deployment</h3>
+        <p class="process-step-desc">
+          We connect devices, sensors, and systems through powerful cloud integrations — ensuring reliable,
+          secure, and scalable IoT connectivity.
+        </p>
+        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=80"
+             alt="Network and IoT integration equipment" class="process-img">
+      </div>
+
+      <!-- Step 3 -->
+      <div class="process-card" data-animate="fade-up" data-delay="400">
+        <div class="process-icon-box">
+          <i class="bx bx-analyse process-icon"></i>
+        </div>
+        <h3 class="process-step-title">3. Analytics & Optimization</h3>
+        <p class="process-step-desc">
+          Our intelligent dashboards and AI algorithms monitor data in real-time — optimizing performance,
+          detecting anomalies, and guiding smarter business strategies.
+        </p>
+        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1000&q=80"
+             alt="Data analytics dashboard visualization" class="process-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why-horizon" class="why-section">
+  <div class="why-overlay"></div>
+  <div class="why-animated-bg"></div>
+
+  <div class="container why-container">
+    <div class="why-header" data-animate="fade-up">
+      <h2 class="why-title">Why Choose <span class="highlight">Horizon IoT Ltd</span></h2>
+      <p class="why-subtitle">
+        We go beyond traditional IoT — delivering secure, scalable, and intelligent
+        solutions that redefine how your business connects, operates, and grows.
+      </p>
+    </div>
+
+    <div class="why-grid">
+      <!-- Card 1 -->
+      <div class="why-card" data-animate="fade-up">
+        <div class="why-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="30" stroke="#f7c400" stroke-width="3" />
+            <path d="M20 33L28 41L44 25" stroke="#e30613" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+              <animate attributeName="stroke-dashoffset" from="60" to="0" dur="1.5s" fill="freeze" />
+            </path>
+          </svg>
+        </div>
+        <h3>Reliability & Accuracy</h3>
+        <p>Our IoT systems deliver 99.9% uptime and real-time precision for critical operations worldwide.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="why-card" data-animate="fade-up" data-delay="200">
+        <div class="why-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="8" width="48" height="48" rx="10" stroke="#7a1fa2" stroke-width="3" />
+            <circle cx="32" cy="32" r="8" stroke="#f7c400" stroke-width="3">
+              <animateTransform attributeName="transform" type="rotate" from="0 32 32" to="360 32 32" dur="4s" repeatCount="indefinite" />
+            </circle>
+          </svg>
+        </div>
+        <h3>Cutting-Edge Technology</h3>
+        <p>We integrate AI, edge computing, and advanced sensors to keep your operations future-ready.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="why-card" data-animate="fade-up" data-delay="400">
+        <div class="why-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 6V58" stroke="#e30613" stroke-width="3" stroke-linecap="round">
+              <animate attributeName="y2" from="6" to="58" dur="1.2s" repeatCount="indefinite" />
+            </path>
+            <circle cx="32" cy="32" r="8" stroke="#f7c400" stroke-width="3">
+              <animate attributeName="r" values="8;10;8" dur="1.8s" repeatCount="indefinite" />
+            </circle>
+          </svg>
+        </div>
+        <h3>Secure & Scalable</h3>
+        <p>Experience enterprise-grade data protection and scalability built for rapid growth.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="why-card" data-animate="fade-up" data-delay="600">
+        <div class="why-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="32,8 56,56 8,56" stroke="#7a1fa2" stroke-width="3" fill="none">
+              <animate attributeName="stroke-dasharray" from="0,200" to="200,0" dur="2s" fill="freeze" />
+            </polygon>
+          </svg>
+        </div>
+        <h3>Customizable Solutions</h3>
+        <p>We tailor each IoT system to your unique needs — from smart fleet control to predictive analytics.</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="why-card" data-animate="fade-up" data-delay="800">
+        <div class="why-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 24H48V40H16V24Z" stroke="#f7c400" stroke-width="3" />
+            <path d="M24 16V48M40 16V48" stroke="#e30613" stroke-width="3" />
+          </svg>
+        </div>
+        <h3>Data-Driven Insights</h3>
+        <p>Transform raw data into powerful analytics dashboards that boost decision-making and ROI.</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="why-card" data-animate="fade-up" data-delay="1000">
+        <div class="why-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 54L54 10" stroke="#7a1fa2" stroke-width="3" />
+            <circle cx="20" cy="44" r="6" stroke="#f7c400" stroke-width="3" />
+            <circle cx="44" cy="20" r="6" stroke="#e30613" stroke-width="3" />
+          </svg>
+        </div>
+        <h3>24/7 Global Support</h3>
+        <p>Our dedicated technical team ensures seamless operation and assistance anytime, anywhere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="footer" class="footer-section">
+  <div class="footer-overlay"></div>
+  <div class="footer-glow"></div>
+
+  <div class="container footer-container">
+    <div class="footer-grid">
+      
+      <!-- Column 1: Logo & About -->
+      <div class="footer-about" data-animate="fade-up">
+        <h2 class="footer-logo">
+          <span class="highlight">Horizon</span> IoT Ltd
+        </h2>
+        <p class="footer-desc">
+          Empowering industries through intelligent IoT, AI, and automation. 
+          We build scalable, data-driven ecosystems for the future of connected technology.
+        </p>
+        <div class="footer-social">
+          <a href="#" class="social-link"><i class="bx bxl-linkedin"></i></a>
+          <a href="#" class="social-link"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="social-link"><i class="bx bxl-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links (All Main + Sub Links) -->
+      <div class="footer-links" data-animate="fade-up" data-delay="200">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about-horizon">About Us</a></li>
+          <li><a href="#how-we-do-it">How We Do It</a></li>
+          <li><a href="#why-horizon">Why Choose Us</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Solutions & Services -->
+      <div class="footer-links" data-animate="fade-up" data-delay="400">
+        <h3>Our Solutions</h3>
+        <ul>
+          <li><a href="#">Fleet Management</a></li>
+          <li><a href="#">Fuel Monitoring</a></li>
+          <li><a href="#">Telematics Systems</a></li>
+          <li><a href="#">IoT Integration</a></li>
+          <li><a href="#">Cloud Analytics</a></li>
+          <li><a href="#">AI Performance Insights</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Contact -->
+      <div class="footer-contact" data-animate="fade-up" data-delay="600">
+        <h3>Contact Info</h3>
+        <p><i class="bx bx-map"></i> Nairobi, Kenya</p>
+        <p><i class="bx bx-phone"></i> +254 700 123 456</p>
+        <p><i class="bx bx-envelope"></i> info@horizoniotltd.com</p>
+        <p><i class="bx bx-time-five"></i> Mon - Sat: 8:00am – 6:00pm</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> Horizon IoT Ltd. All Rights Reserved.</p>
+  </div>
+</footer>
+<!-- Floating WhatsApp Icon (Bottom Left) -->
+<a href="https://wa.me/254700780203" target="_blank" 
+   id="whatsapp-float" 
+   class="floating-icon whatsapp">
+  <i class='bx bxl-whatsapp'></i>
+</a>
+
+<!-- Floating Chatbot Icon (Bottom Right) -->
+<a href="#chatbot" 
+   id="chatbot-float" 
+   class="floating-icon chatbot">
+  <i class='bx bx-chat'></i>
+</a>
+
+<!-- Chatbot Widget -->
+<div id="chatbot-widget" class="chatbot-widget">
+  <div class="chatbot-header">
+    <span>Horizon IoT Assistant</span>
+    <button id="chatbot-close"><i class="bx bx-x"></i></button>
+  </div>
+
+  <div class="chatbot-messages" id="chatbot-messages">
+    <div class="bot-message">Hi! How can I help you today?</div>
+  </div>
+
+  <div class="chatbot-input">
+    <input type="text" id="chatbot-input-field" placeholder="Type your message..." />
+    <button id="chatbot-send"><i class="bx bx-send"></i></button>
+  </div>
+
+  <!-- Bubble background container -->
+  <div class="chatbot-bubbles"></div>
+</div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const chatbotIcon = document.getElementById("chatbot-float");
+  const chatbotWidget = document.getElementById("chatbot-widget");
+  const chatbotClose = document.getElementById("chatbot-close");
+  const chatbotInput = document.getElementById("chatbot-input-field");
+  const chatbotSend = document.getElementById("chatbot-send");
+  const chatbotMessages = document.getElementById("chatbot-messages");
+
+  // Toggle chatbot window
+  chatbotIcon.addEventListener("click", () => {
+    chatbotWidget.style.display = chatbotWidget.style.display === "flex" ? "none" : "flex";
+  });
+
+  // Close button
+  chatbotClose.addEventListener("click", () => {
+    chatbotWidget.style.display = "none";
+  });
+
+  // Send message
+  const sendMessage = () => {
+    const text = chatbotInput.value.trim();
+    if (!text) return;
+    const userMsg = document.createElement("div");
+    userMsg.classList.add("user-message");
+    userMsg.textContent = text;
+    chatbotMessages.appendChild(userMsg);
+
+    chatbotInput.value = "";
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+    // Bot reply (example)
+    setTimeout(() => {
+      const botMsg = document.createElement("div");
+      botMsg.classList.add("bot-message");
+      botMsg.textContent = "Thanks for your message! We'll get back to you shortly.";
+      chatbotMessages.appendChild(botMsg);
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }, 800);
+  };
+
+  chatbotSend.addEventListener("click", sendMessage);
+  chatbotInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") sendMessage();
+  });
+});
+
+</script>
+  <script src="js/main.js"></script>
+</body>
+</html>
