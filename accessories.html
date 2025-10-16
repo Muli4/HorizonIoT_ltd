@@ -86,6 +86,7 @@
           </li>
 
           <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+          <li class="nav__item"><a href="solutions.html" class="nav__link">Solutions</a></li>
         </ul>
       </nav>
 
@@ -264,7 +265,7 @@
 
 
 
-  <footer id="footer" class="footer-section">
+<footer id="footer" class="footer-section">
   <div class="footer-overlay"></div>
   <div class="footer-glow"></div>
 
@@ -287,34 +288,29 @@
         </div>
       </div>
 
-      <!-- Column 2: Quick Links (All Main + Sub Links) -->
+      <!-- Column 2: Quick Links -->
       <div class="footer-links" data-animate="fade-up" data-delay="200">
         <h3>Quick Links</h3>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="#about-horizon">About Us</a></li>
-          <li><a href="#how-we-do-it">How We Do It</a></li>
-          <li><a href="#why-horizon">Why Choose Us</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="products.html">Products</a></li>
+          <li><a href="index.html#about-horizon">About Us</a></li>
+          <li><a href="index.html#how-we-do-it">How We Do It</a></li>
+          <li><a href="index.html#why-horizon">Why Choose Us</a></li>
           <li><a href="solutions.html">Solutions</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="careers.html">Careers</a></li>
-          <li><a href="blog.html">Blog</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
 
-      <!-- Column 3: Solutions & Services -->
+      <!-- Column 3: Solutions -->
       <div class="footer-links" data-animate="fade-up" data-delay="400">
         <h3>Our Solutions</h3>
         <ul>
-          <li><a href="#">Fleet Management</a></li>
-          <li><a href="#">Fuel Monitoring</a></li>
-          <li><a href="#">Telematics Systems</a></li>
-          <li><a href="#">IoT Integration</a></li>
-          <li><a href="#">Cloud Analytics</a></li>
-          <li><a href="#">AI Performance Insights</a></li>
+          <li><a href="solutions.html#fleet-management">Fleet Management</a></li>
+          <li><a href="solutions.html#fuel-monitoring">Fuel Monitoring</a></li>
+          <li><a href="solutions.html#telematics-systems">Telematics Systems</a></li>
+          <li><a href="solutions.html#iot-intergration">IoT Integration</a></li>
+          <li><a href="solutions.html#cloud-analytics">Cloud Analytics</a></li>
+          <li><a href="solutions.html#ai-performance-insights">AI Performance Insights</a></li>
         </ul>
       </div>
 
@@ -334,6 +330,7 @@
     <p>© <span id="year"></span> Horizon IoT Ltd. All Rights Reserved.</p>
   </div>
 </footer>
+
 <!-- Floating WhatsApp Icon (Bottom Left) -->
 <a href="https://wa.me/254700780203" target="_blank" 
    id="whatsapp-float" 
@@ -341,136 +338,26 @@
   <i class='bx bxl-whatsapp'></i>
 </a>
 
-<!-- Floating Chatbot Icon (Bottom Right) -->
-<a href="#chatbot" 
-   id="chatbot-float" 
-   class="floating-icon chatbot">
-  <i class='bx bx-chat'></i>
-</a>
-
-<!-- Chatbot Widget -->
-<div id="chatbot-widget" class="chatbot-widget">
-  <div class="chatbot-header">
-    <span>Horizon IoT Assistant</span>
-    <button id="chatbot-close"><i class="bx bx-x"></i></button>
-  </div>
-
-  <div class="chatbot-messages" id="chatbot-messages">
-    <div class="bot-message">Hi! How can I help you today?</div>
-  </div>
-
-  <div class="chatbot-input">
-    <input type="text" id="chatbot-input-field" placeholder="Type your message..." />
-    <button id="chatbot-send"><i class="bx bx-send"></i></button>
-  </div>
-
-  <!-- Bubble background container -->
-  <div class="chatbot-bubbles"></div>
-</div>
+<!-- ✅ Chatway Live Chat Integration -->
+<script id="chatway" async="true" src="https://cdn.chatway.app/widget.js?id=O57n8oJB39cD"></script>
 
 <script>
-// WhatsApp configuration
-const whatsappNumber = "254700780203";
-
-document.querySelectorAll(".get-quote").forEach(btn => {
-  btn.addEventListener("click", e => {
-    e.preventDefault();
-    const product = btn.getAttribute("data-product");
-    const message = `Hello! I'm interested in getting a quote for ${product}. Please share more details.`;
-    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
+  // WhatsApp Get Quote Buttons (Optional Feature)
+  const whatsappNumber = "254700780203";
+  document.querySelectorAll(".get-quote").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      const product = btn.getAttribute("data-product");
+      const message = `Hello! I'm interested in getting a quote for ${product}. Please share more details.`;
+      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    });
   });
-});
 
-// Modal Logic
-const modal = document.getElementById("accessoryModal");
-const modalImage = document.getElementById("modalImage");
-const modalTitle = document.getElementById("modalTitle");
-const modalDescription = document.getElementById("modalDescription");
-const modalReviews = document.getElementById("modalReviews");
-const closeModal = document.querySelector(".modal-close");
-const quoteBtn = document.getElementById("modalQuoteBtn");
-
-document.querySelectorAll(".read-more").forEach(btn => {
-  btn.addEventListener("click", e => {
-    e.preventDefault();
-    modalImage.src = btn.getAttribute("data-image");
-    modalTitle.textContent = btn.getAttribute("data-product");
-    modalDescription.textContent = btn.getAttribute("data-description");
-
-    // Reviews
-    const reviewsData = JSON.parse(btn.getAttribute("data-reviews"));
-    modalReviews.innerHTML = `<h4>Client Reviews</h4>` + 
-      reviewsData.map(r => `
-        <div class="review-item">
-          <strong>${r.name}</strong>
-          <p>"${r.review}"</p>
-        </div>
-      `).join("");
-
-    // WhatsApp button
-    const message = `Hello! I'm interested in ${btn.getAttribute("data-product")}. Can I get more details?`;
-    quoteBtn.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-    modal.classList.add("show");
-  });
-});
-
-closeModal.addEventListener("click", () => modal.classList.remove("show"));
-window.addEventListener("click", e => {
-  if (e.target === modal) modal.classList.remove("show");
-});
+  // Footer Year Update
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-  const chatbotIcon = document.getElementById("chatbot-float");
-  const chatbotWidget = document.getElementById("chatbot-widget");
-  const chatbotClose = document.getElementById("chatbot-close");
-  const chatbotInput = document.getElementById("chatbot-input-field");
-  const chatbotSend = document.getElementById("chatbot-send");
-  const chatbotMessages = document.getElementById("chatbot-messages");
-
-  // Toggle chatbot window
-  chatbotIcon.addEventListener("click", () => {
-    chatbotWidget.style.display = chatbotWidget.style.display === "flex" ? "none" : "flex";
-  });
-
-  // Close button
-  chatbotClose.addEventListener("click", () => {
-    chatbotWidget.style.display = "none";
-  });
-
-  // Send message
-  const sendMessage = () => {
-    const text = chatbotInput.value.trim();
-    if (!text) return;
-    const userMsg = document.createElement("div");
-    userMsg.classList.add("user-message");
-    userMsg.textContent = text;
-    chatbotMessages.appendChild(userMsg);
-
-    chatbotInput.value = "";
-    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-
-    // Bot reply (example)
-    setTimeout(() => {
-      const botMsg = document.createElement("div");
-      botMsg.classList.add("bot-message");
-      botMsg.textContent = "Thanks for your message! We'll get back to you shortly.";
-      chatbotMessages.appendChild(botMsg);
-      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-    }, 800);
-  };
-
-  chatbotSend.addEventListener("click", sendMessage);
-  chatbotInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") sendMessage();
-  });
-});
-
-</script>
-  <script src="js/main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
