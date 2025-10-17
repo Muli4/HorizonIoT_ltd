@@ -122,3 +122,38 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(autoSlide, 8000);
   showSlide(0);
 });
+
+// ====================== Clients Slider ======================
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".clients-track");
+  const slides = document.querySelectorAll(".client-slide");
+  const dots = document.querySelectorAll(".clients-dots .dot");
+
+  if (!track || !slides.length || !dots.length) return; // Safety check
+
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+
+  function showSlide(index) {
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[index].classList.add("active");
+  }
+
+  // Handle dot click navigation
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      currentIndex = i;
+      showSlide(currentIndex);
+    });
+  });
+
+  // Auto-slide every 4 seconds
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    showSlide(currentIndex);
+  }, 4000);
+
+  // Initialize first slide
+  showSlide(currentIndex);
+});
