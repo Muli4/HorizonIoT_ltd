@@ -157,3 +157,74 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize first slide
   showSlide(currentIndex);
 });
+
+
+// =======================
+// MODAL FUNCTIONALITY
+// =======================
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.querySelector(".modal");
+  const modalImage = modal.querySelector(".modal-content img");
+  const modalTitle = modal.querySelector(".modal-content h3");
+  const modalDescription = modal.querySelector(".modal-content p");
+  const reviewsContainer = modal.querySelector(".reviews-section");
+  const modalClose = modal.querySelector(".modal-close");
+  const readMoreButtons = document.querySelectorAll(".read-more");
+
+  readMoreButtons.forEach(button => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // Retrieve data attributes
+      const product = button.getAttribute("data-product");
+      const imageSrc = button.getAttribute("data-image");
+      const description = button.getAttribute("data-description");
+      const reviewsData = button.getAttribute("data-reviews");
+
+      // Fill modal with data
+      modalImage.src = imageSrc;
+      modalTitle.textContent = product;
+      modalDescription.textContent = description;
+
+      // Generate reviews
+      reviewsContainer.innerHTML = "";
+      try {
+        const reviews = JSON.parse(reviewsData);
+        if (reviews.length > 0) {
+          const reviewsHTML = reviews.map(
+            r => `
+              <div class="review-item">
+                <p>"${r.review}"</p>
+                <small>- ${r.name}</small>
+              </div>
+            `
+          ).join("");
+          reviewsContainer.innerHTML = `
+            <h4>Customer Reviews:</h4>
+            ${reviewsHTML}
+          `;
+        }
+      } catch (err) {
+        console.error("Invalid reviews JSON:", err);
+      }
+
+      // Show modal
+      modal.classList.add("show");
+      document.body.classList.add("modal-open");
+    });
+  });
+
+  // Close modal
+  modalClose.addEventListener("click", () => {
+    modal.classList.remove("show");
+    document.body.classList.remove("modal-open");
+  });
+
+  // Close when clicking outside modal content
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("show");
+      document.body.classList.remove("modal-open");
+    }
+  });
+});
