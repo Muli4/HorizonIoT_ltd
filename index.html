@@ -630,6 +630,26 @@
 </script>
 
 <script src="js/main.js"></script>
+  <!-- 🔹 JavaScript for Menu Toggle -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
+    const dropdownLinks = document.querySelectorAll('.dropdown > a');
 
+    menuToggle.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    // Enable Products toggle on mobile
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          link.parentElement.classList.toggle('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
