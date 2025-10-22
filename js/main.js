@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     showSlide(currentIndex);
   }
 
-  setInterval(autoSlide, 8000);
+  setInterval(autoSlide, 80000);
   showSlide(0);
 });
 
@@ -158,9 +158,8 @@ document.addEventListener("DOMContentLoaded", () => {
   showSlide(currentIndex);
 });
 
-
 // =======================
-// MODAL FUNCTIONALITY
+// MODAL FUNCTIONALITY (UPDATED)
 // =======================
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.querySelector(".modal");
@@ -168,6 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalTitle = modal.querySelector(".modal-content h3");
   const modalDescription = modal.querySelector(".modal-content p");
   const reviewsContainer = modal.querySelector(".reviews-section");
+  const featuresContainer = modal.querySelector(".features-section"); // NEW
   const modalClose = modal.querySelector(".modal-close");
   const readMoreButtons = document.querySelectorAll(".read-more");
 
@@ -180,13 +180,35 @@ document.addEventListener("DOMContentLoaded", () => {
       const imageSrc = button.getAttribute("data-image");
       const description = button.getAttribute("data-description");
       const reviewsData = button.getAttribute("data-reviews");
+      const featuresData = button.getAttribute("data-features"); // NEW
 
-      // Fill modal with data
+      // Fill modal content
       modalImage.src = imageSrc;
       modalTitle.textContent = product;
       modalDescription.textContent = description;
 
-      // Generate reviews
+      // =======================
+      // Generate Features List
+      // =======================
+      featuresContainer.innerHTML = "";
+      try {
+        const features = JSON.parse(featuresData);
+        if (features.length > 0) {
+          const featuresHTML = features.map(
+            f => `<li><i class="fas fa-check-circle"></i> ${f}</li>`
+          ).join("");
+          featuresContainer.innerHTML = `
+            <h4>Key Features:</h4>
+            <ul class="feature-list">${featuresHTML}</ul>
+          `;
+        }
+      } catch (err) {
+        console.error("Invalid features JSON:", err);
+      }
+
+      // =======================
+      // Generate Reviews
+      // =======================
       reviewsContainer.innerHTML = "";
       try {
         const reviews = JSON.parse(reviewsData);
@@ -214,7 +236,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // =======================
   // Close modal
+  // =======================
   modalClose.addEventListener("click", () => {
     modal.classList.remove("show");
     document.body.classList.remove("modal-open");

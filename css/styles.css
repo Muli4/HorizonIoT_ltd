@@ -2733,6 +2733,36 @@ body.modal-open {
 }
 
 /* =========================
+   FEATURES SECTION
+========================= */
+.features-section {
+  margin-top: 20px;
+}
+
+.features-section h4 {
+  margin-bottom: 10px;
+  color: #222;
+  font-weight: 600;
+}
+
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.feature-list li {
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95em;
+}
+
+.feature-list i {
+  color: #007bff;
+}
+
+/* =========================
    OUR SOLUTIONS STYLES (Enhanced)
 ========================= */
 .solutions-wrapper {
