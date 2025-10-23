@@ -15,87 +15,121 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
   <link rel="icon" href="images/logo.png" type="image/x-icon" />
 </head>
 <body>
 
-  <!-- ================= HEADER ================= -->
-  <header class="site-header">
-
-    <!-- ===== Top Bar ===== -->
-    <div class="header-top">
-      <div class="container header-top__container">
-        <div class="header-top__contact">
-          <a href="tel:+254700780203"><i class="fas fa-phone-alt"></i> +254 700 780 203</a>
-          <span class="separator">|</span>
+  <!-- 🔹 Subheader -->
+  <div class="subheader">
+    <div class="container subheader-content">
+      <div class="left-info">
+        <span>
+          <i class='bx bx-phone'></i> 
+          <a href="tel:+254700780203">+254 700 780 203</a> |
           <a href="tel:+254722339434">+254 722 339 434</a>
-          <span class="separator">|</span>
-          <a href="mailto:info@horizoniot.com"><i class="fas fa-envelope"></i> info@horizoniot.com</a>
-        </div>
-        <div class="header-top__social">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        </div>
+        </span>
+        <span>
+          <i class='bx bx-envelope'></i> 
+          <a href="mailto:info@horizoniotltd.com">info@horizoniotltd.com</a>
+        </span>
+        <span>
+          <i class='bx bx-map'></i> 
+          <a href="https://www.google.com/maps?q=Nairobi,Kenya" target="_blank">Nairobi, Kenya</a>
+        </span>
+      </div>
+      <div class="right-socials">
+        <a href="#"><i class='bx bxl-facebook'></i></a>
+        <a href="#"><i class='bx bxl-twitter'></i></a>
+        <a href="#"><i class='bx bxl-instagram'></i></a>
+        <a href="#"><i class='bx bxl-linkedin'></i></a>
       </div>
     </div>
+  </div>
 
-    <!-- ===== Main Navigation ===== -->
-    <div class="header-main container">
-      <a href="index.html" class="header-main__logo">
-        <img src="images/logo.png" alt="Horizon IoT Ltd Logo" class="logo-img" />
-        <span class="logo-text">Horizon IoT Ltd</span>
-      </a>
+  <!-- 🔹 Main Header -->
+  <header class="main-header">
+    <div class="container header-content">
+      <div class="logo">
+        <a href="/index.html">
+          <img src="/images/logo.png" alt="Horizon IoT Ltd">
+          <span class="logo-text">HorizonIoT</span>
+        </a>
+      </div>
+      <!-- 🔹 Mobile Hamburger Menu -->
+      <div class="menu-toggle" id="menu-toggle">
+        <i class='bx bx-menu'></i>
+      </div>
 
-      <nav class="nav" id="main-navigation">
-        <ul class="nav__list">
-          <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
-          <li class="nav__item"><a href="about.html" class="nav__link">About Us</a></li>
+      <!-- 🔹 Navigation Menu -->
+      <nav class="navbar" id="navbar">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/solutions.html">Solutions</a></li>
 
-          <!-- Dropdown Menu -->
-          <li class="nav__item nav__item--dropdown">
-            <a href="#" class="nav__link dropdown-toggle">Products <i class="fas fa-chevron-down"></i></a>
-            <ul class="dropdown-menu">
-              <li class="dropdown-menu__item nav__link--active"><a href="accessories.html">Accessories</a></li>
+          <!-- 🌐 Products Mega Menu -->
+          <li class="dropdown">
+            <a href="#">Products <i class='bx bx-chevron-down'></i></a>
+            <div class="mega-menu">
 
-              <li class="dropdown-menu__item dropdown-menu__item--submenu">
-                <a href="#">Dash Cameras <i class="fas fa-angle-right"></i></a>
-                <ul class="submenu">
-                  <li><a href="mettax.html">MettaX</a></li>
-                  <li><a href="#">JimilIoT</a></li>
-                </ul>
-              </li>
+              <div class="mega-column">
+                <h4>GPS Tracking Devices</h4>
+                <a href="/products/GPS Tracking Devices/car-tracker.html">Car Trackers</a>
+                <a href="/products/GPS Tracking Devices/motorbike-tracker.html">Motorbike Trackers</a>
+                <a href="/products/GPS Tracking Devices/asset-tracker.html">Asset Trackers</a>
+                <a href="/products/GPS Tracking Devices/personal-trackers.html">Personal Trackers</a>
+                <a href="/products/GPS Tracking Devices/personal-trackers.html">Speed Limiters</a>
+                <a href="/products/GPS Tracking Devices/car-alarms.html">Car Alarms</a>
+              </div>
 
-              <li class="dropdown-menu__item dropdown-menu__item--submenu">
-                <a href="#">Fuel Sensors <i class="fas fa-angle-right"></i></a>
-                <ul class="submenu">
-                  <li><a href="escort.html">Escort</a></li>
-                </ul>
-              </li>
+              <div class="mega-column">
+                <h4>Monitoring</h4>
+                <a href="/products/Monitoring/escort.html">Fuel Monitoring Sensor</a>
+                <a href="/products/Monitoring/temparature-sensors.html">Temperature Sensors</a>
+                <a href="/products/Monitoring/load-sensors.html">Load Sensors</a>
 
-              <li class="dropdown-menu__item dropdown-menu__item--submenu">
-                <a href="#">Trackers <i class="fas fa-angle-right"></i></a>
-                <ul class="submenu">
-                  <li><a href="telnotika.html">Teltonika</a></li>
-                  <li><a href="concox.html">Concox</a></li>
-                </ul>
-              </li>
-            </ul>
+              </div>
+
+              <div class="mega-column">
+                <h4>GPS Tracker Brands</h4>
+                <a href="/products/trackers/telnotika.html">Teltonika</a>
+                <a href="/products/trackers/concox.html">Concox</a>
+              </div>
+
+              <div class="mega-column">
+                <h4>Tracking Softwares</h4>
+                <a href="/products/Tracking Softwares/protrack.html">Protrack</a>
+                <a href="/products/Tracking Softwares/AIKA-GPS.html">AIKA GPS</a>
+                <a href="/products/Tracking Softwares/Tracksolid.html">Tracksolid</a>
+                <a href="/products/Tracking Softwares/tracker-home.html">Tracker Home</a>
+                <a href="/products/Tracking Softwares/secumore.html">Secumore</a>
+                <a href="/products/Tracking Softwares/sinotrack.html">Sinotrack</a>
+                <a href="/products/Tracking Softwares/GPS-trace.html">GPS Trace</a>
+                <a href="/products/Tracking Softwares/trackgree.html">Trackgree</a>
+              </div>
+
+              <div class="mega-column">
+                <h4>Dashcams</h4>
+                <a href="/products/Dashcam/jimilIoT-dashcams.html">Jimi IoT Dashcams</a>
+                <a href="/products/Dashcam/mettax.html">Mettax</a>
+                <a href="/products/Dashcam/jimilIoT.html">JimiIoT</a>
+                <a href="/products/Dashcam/hikvision.html">Hikvision Dashcams</a>
+              </div>
+
+              <div class="mega-column">
+                <h4>Accessories</h4>
+                <a href="/products/accessories.html">Accessories</a>
+              </div>
+
+            </div>
           </li>
 
-          <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
-          <li class="nav__item"><a href="solutions.html" class="nav__link">Solutions</a></li>
+          <li><a href="/contact.html">Contact</a></li>
         </ul>
       </nav>
-
-      <!-- Mobile Toggle -->
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
-        <i class="fas fa-bars open-icon"></i>
-        <i class="fas fa-times close-icon"></i>
-      </button>
     </div>
-</header>
+  </header>
 
 <!-- ================= ESCORT FUEL SENSORS SECTION ================= -->
 <section class="accessories-section section-padding">
@@ -114,7 +148,7 @@
       <!-- Escort TD BLE -->
       <div class="accessory-card" data-animate="zoom-in">
         <div class="accessory-img">
-          <img src="images/fls-bte-768x768.png" alt="Escort TD BLE">
+          <img src="/images/fls-bte-768x768.png" alt="Escort TD BLE">
         </div>
         <div class="accessory-content">
           <h3>Escort TD BLE</h3>
@@ -125,9 +159,12 @@
               data-product="Escort TD BLE"
               data-image="images/fls-bte-768x768.png"
               data-description="Escort TD BLE is a wireless Bluetooth Low Energy fuel level sensor that ensures precise fuel monitoring and theft detection. It is ideal for vehicles, machinery, and stationary tanks — delivering stable data transmission and long battery life."
-              data-reviews='[
-                {"name":"FleetSmart Africa","review":"Installation was simple, and readings are extremely accurate!"},
-                {"name":"AutoTrack Ltd","review":"Reliable and perfect for fuel management across our trucks."}
+              data-features='[
+              "Self-Diagnostic System: Continuous monitoring and instant feedback on deviations."
+              "Built-in Shielding Sensor: Enhanced protection against external interference."
+              "Continuous Data Recording: A black box feature for comprehensive data history.
+              "Explosion-Proof Certification: Meeting safety standards for volatile environments."
+              "7-Year Guarantee: A testament to the system’s durability and longevity"
               ]'>Read More</a>
           </div>
         </div>
@@ -136,7 +173,7 @@
       <!-- Escort TD-150 BLE -->
       <div class="accessory-card" data-animate="zoom-in" data-delay="100">
         <div class="accessory-img">
-          <img src="images/fls-reduced.jpg" alt="Escort TD-150 BLE">
+          <img src="/images/fls-reduced.jpg" alt="Escort TD-150 BLE">
         </div>
         <div class="accessory-content">
           <h3>Escort TD-150 BLE</h3>
@@ -267,6 +304,6 @@
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
-<script src="js/main.js"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>

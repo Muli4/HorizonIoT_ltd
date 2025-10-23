@@ -150,84 +150,97 @@ document.addEventListener("DOMContentLoaded", () => {
 
     showClientSlide(currentIndex);
   }
+// =======================
+// MODAL FUNCTIONALITY (UPDATED)
+// =======================
 
-  // ======================
-  // Modal Functionality
-  // ======================
-  const modal = document.getElementById("accessoryModal");
-  if (modal) {
-    const modalImage = modal.querySelector("#modalImage");
-    const modalTitle = modal.querySelector("#modalTitle");
-    const modalDescription = modal.querySelector("#modalDescription");
-    const reviewsContainer = modal.querySelector("#modalReviews");
-    const modalClose = modal.querySelector(".modal-close");
-    const modalQuoteBtn = modal.querySelector("#modalQuoteBtn");
+  const modal = document.querySelector(".modal");
+  const modalImage = modal.querySelector(".modal-content img");
+  const modalTitle = modal.querySelector(".modal-content h3");
+  const modalDescription = modal.querySelector(".modal-content p");
+  const reviewsContainer = modal.querySelector(".reviews-section");
+  const featuresContainer = modal.querySelector(".features-section"); // NEW
+  const modalClose = modal.querySelector(".modal-close");
+  const readMoreButtons = document.querySelectorAll(".read-more");
 
-    const readMoreButtons = document.querySelectorAll(".read-more");
+  readMoreButtons.forEach(button => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
 
-    readMoreButtons.forEach(button => {
-      button.addEventListener("click", (e) => {
-        e.preventDefault();
+      // Retrieve data attributes
+      const product = button.getAttribute("data-product");
+      const imageSrc = button.getAttribute("data-image");
+      const description = button.getAttribute("data-description");
+      const reviewsData = button.getAttribute("data-reviews");
+      const featuresData = button.getAttribute("data-features"); // NEW
 
-        const product = button.getAttribute("data-product");
-        const imageSrc = button.getAttribute("data-image");
-        const description = button.getAttribute("data-description");
-        const reviewsData = button.getAttribute("data-reviews");
+      // Fill modal content
+      modalImage.src = imageSrc;
+      modalTitle.textContent = product;
+      modalDescription.textContent = description;
 
-        modalImage.src = imageSrc;
-        modalImage.alt = product;
-        modalTitle.textContent = product;
-        modalDescription.textContent = description;
-
-        // Generate Reviews List
-        reviewsContainer.innerHTML = "";
-        try {
-          const reviews = JSON.parse(reviewsData);
-          if (reviews.length > 0) {
-            const reviewsHTML = reviews.map(
-              r => `
-                <div class="review-item">
-                  <p>"${r.review}"</p>
-                  <small>- ${r.name}</small>
-                </div>
-              `
-            ).join("");
-            reviewsContainer.innerHTML = `
-              <h4>Customer Reviews:</h4>
-              ${reviewsHTML}
-            `;
-          }
-        } catch (err) {
-          console.error("Invalid reviews JSON:", err);
+      // =======================
+      // Generate Features List
+      // =======================
+      featuresContainer.innerHTML = "";
+      try {
+        const features = JSON.parse(featuresData);
+        if (features.length > 0) {
+          const featuresHTML = features.map(
+            f => `<li> ${f}</li>`
+          ).join("");
+          featuresContainer.innerHTML = `
+            <h4>Key Features:</h4>
+            <ul class="feature-list">${featuresHTML}</ul>
+          `;
         }
+      } catch (err) {
+        console.error("Invalid features JSON:", err);
+      }
 
-        // Update WhatsApp quote button href with message including product name
-        const whatsappMessage = `Hello! I'm interested in getting a quote for ${product}. Please share more details.`;
-        modalQuoteBtn.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+      // =======================
+      // Generate Reviews
+      // =======================
+      reviewsContainer.innerHTML = "";
+      try {
+        const reviews = JSON.parse(reviewsData);
+        if (reviews.length > 0) {
+          const reviewsHTML = reviews.map(
+            r => `
+              <div class="review-item">
+                <p>"${r.review}"</p>
+                <small>- ${r.name}</small>
+              </div>
+            `
+          ).join("");
+          reviewsContainer.innerHTML = `
+            <h4>Customer Reviews:</h4>
+            ${reviewsHTML}
+          `;
+        }
+      } catch (err) {
+        console.error("Invalid reviews JSON:", err);
+      }
 
-        modal.classList.add("show");
-        document.body.classList.add("modal-open");
-      });
+      // Show modal
+      modal.classList.add("show");
+      document.body.classList.add("modal-open");
     });
+  });
 
-    modalClose.addEventListener("click", () => {
+  // =======================
+  // Close modal
+  // =======================
+  modalClose.addEventListener("click", () => {
+    modal.classList.remove("show");
+    document.body.classList.remove("modal-open");
+  });
+
+  // Close when clicking outside modal content
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
       modal.classList.remove("show");
       document.body.classList.remove("modal-open");
-    });
-
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.classList.remove("show");
-        document.body.classList.remove("modal-open");
-      }
-    });
-
-    // Optional: close modal on ESC key
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && modal.classList.contains("show")) {
-        modal.classList.remove("show");
-        document.body.classList.remove("modal-open");
-      }
-    });
-  }
+    }
+  });
 });

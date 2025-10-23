@@ -15,88 +15,121 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="icon" href="images/logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="icon" href="/images/logo.png" type="image/x-icon" />
 </head>
 <body>
 
-  <!-- ================= HEADER ================= -->
-  <header class="site-header">
-
-    <!-- ===== Top Bar ===== -->
-    <div class="header-top">
-      <div class="container header-top__container">
-        <div class="header-top__contact">
-          <a href="tel:+254700780203"><i class="fas fa-phone-alt"></i> +254 700 780 203</a>
-          <span class="separator">|</span>
+ <!-- 🔹 Subheader -->
+  <div class="subheader">
+    <div class="container subheader-content">
+      <div class="left-info">
+        <span>
+          <i class='bx bx-phone'></i> 
+          <a href="tel:+254700780203">+254 700 780 203</a> |
           <a href="tel:+254722339434">+254 722 339 434</a>
-          <span class="separator">|</span>
-          <a href="mailto:info@horizoniot.com"><i class="fas fa-envelope"></i> info@horizoniot.com</a>
-        </div>
-        <div class="header-top__social">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        </div>
+        </span>
+        <span>
+          <i class='bx bx-envelope'></i> 
+          <a href="mailto:info@horizoniotltd.com">info@horizoniotltd.com</a>
+        </span>
+        <span>
+          <i class='bx bx-map'></i> 
+          <a href="https://www.google.com/maps?q=Nairobi,Kenya" target="_blank">Nairobi, Kenya</a>
+        </span>
+      </div>
+      <div class="right-socials">
+        <a href="#"><i class='bx bxl-facebook'></i></a>
+        <a href="#"><i class='bx bxl-twitter'></i></a>
+        <a href="#"><i class='bx bxl-instagram'></i></a>
+        <a href="#"><i class='bx bxl-linkedin'></i></a>
       </div>
     </div>
+  </div>
 
-    <!-- ===== Main Navigation ===== -->
-    <div class="header-main container">
-      <a href="index.html" class="header-main__logo">
-        <img src="images/logo.png" alt="Horizon IoT Ltd Logo" class="logo-img" />
-        <span class="logo-text">Horizon IoT Ltd</span>
-      </a>
+  <!-- 🔹 Main Header -->
+  <header class="main-header">
+    <div class="container header-content">
+      <div class="logo">
+        <a href="/index.html">
+          <img src="/images/logo.png" alt="Horizon IoT Ltd">
+          <span class="logo-text">HorizonIoT</span>
+        </a>
+      </div>
+      <!-- 🔹 Mobile Hamburger Menu -->
+      <div class="menu-toggle" id="menu-toggle">
+        <i class='bx bx-menu'></i>
+      </div>
 
-      <nav class="nav" id="main-navigation">
-        <ul class="nav__list">
-          <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
-          <li class="nav__item"><a href="about.html" class="nav__link">About Us</a></li>
+      <!-- 🔹 Navigation Menu -->
+      <nav class="navbar" id="navbar">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/solutions.html">Solutions</a></li>
 
-          <!-- Dropdown Menu -->
-          <li class="nav__item nav__item--dropdown">
-            <a href="#" class="nav__link dropdown-toggle">Products <i class="fas fa-chevron-down"></i></a>
-            <ul class="dropdown-menu">
-              <li class="dropdown-menu__item nav__link--active"><a href="accessories.html">Accessories</a></li>
+          <!-- 🌐 Products Mega Menu -->
+          <li class="dropdown">
+            <a href="#">Products <i class='bx bx-chevron-down'></i></a>
+            <div class="mega-menu">
 
-              <li class="dropdown-menu__item dropdown-menu__item--submenu">
-                <a href="#">Dash Cameras <i class="fas fa-angle-right"></i></a>
-                <ul class="submenu">
-                  <li><a href="mettax.html">MettaX</a></li>
-                  <li><a href="jimilIoT.html">JimilIoT</a></li>
-                </ul>
-              </li>
+              <div class="mega-column">
+                <h4>GPS Tracking Devices</h4>
+                <a href="/products/GPS Tracking Devices/car-tracker.html">Car Trackers</a>
+                <a href="/products/GPS Tracking Devices/motorbike-tracker.html">Motorbike Trackers</a>
+                <a href="/products/GPS Tracking Devices/asset-tracker.html">Asset Trackers</a>
+                <a href="/products/GPS Tracking Devices/personal-trackers.html">Personal Trackers</a>
+                <a href="/products/GPS Tracking Devices/personal-trackers.html">Speed Limiters</a>
+                <a href="/products/GPS Tracking Devices/car-alarms.html">Car Alarms</a>
+              </div>
 
-              <li class="dropdown-menu__item dropdown-menu__item--submenu">
-                <a href="#">Fuel Sensors <i class="fas fa-angle-right"></i></a>
-                <ul class="submenu">
-                  <li><a href="escort.html">Escort</a></li>
-                </ul>
-              </li>
+              <div class="mega-column">
+                <h4>Monitoring</h4>
+                <a href="/products/Monitoring/fuel-monitoring-system.html">Fuel Monitoring System</a>
+                <a href="/products/Monitoring/temparature-sensors.html">Temperature Sensors</a>
+                <a href="/products/Monitoring/load-sensors.html">Load Sensors</a>
 
-              <li class="dropdown-menu__item dropdown-menu__item--submenu">
-                <a href="#">Trackers <i class="fas fa-angle-right"></i></a>
-                <ul class="submenu">
-                  <li><a href="telnotika.html">Teltonika</a></li>
-                  <li><a href="concox.html">Concox</a></li>
-                </ul>
-              </li>
-            </ul>
+              </div>
+
+              <div class="mega-column">
+                <h4>GPS Tracker Brands</h4>
+                <a href="/products/trackers/telnotika.html">Teltonika</a>
+                <a href="/products/trackers/concox.html">Concox</a>
+              </div>
+
+              <div class="mega-column">
+                <h4>Tracking Softwares</h4>
+                <a href="/products/Tracking Softwares/protrack.html">Protrack</a>
+                <a href="/products/Tracking Softwares/AIKA-GPS.html">AIKA GPS</a>
+                <a href="/products/Tracking Softwares/Tracksolid.html">Tracksolid</a>
+                <a href="/products/Tracking Softwares/tracker-home.html">Tracker Home</a>
+                <a href="/products/Tracking Softwares/secumore.html">Secumore</a>
+                <a href="/products/Tracking Softwares/sinotrack.html">Sinotrack</a>
+                <a href="/products/Tracking Softwares/GPS-trace.html">GPS Trace</a>
+                <a href="/products/Tracking Softwares/trackgree.html">Trackgree</a>
+              </div>
+
+              <div class="mega-column">
+                <h4>Dashcams</h4>
+                <a href="/products/Dashcam/howen.html">Howen</a>
+                <a href="/products/Dashcam/mettax.html">Mettax</a>
+                <a href="/products/Dashcam/jimilIoT.html">JimiIoT</a>
+                <a href="/products/Dashcam/hikvision.html">Hikvision Dashcams</a>
+              </div>
+
+              <div class="mega-column">
+                <h4>Accessories</h4>
+                <a href="/products/accessories.html">Accessories</a>
+              </div>
+
+            </div>
           </li>
 
-          <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
-          <li class="nav__item"><a href="solutions.html" class="nav__link">Solutions</a></li>
+          <li><a href="/contact.html">Contact</a></li>
         </ul>
       </nav>
-
-      <!-- Mobile Toggle -->
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
-        <i class="fas fa-bars open-icon"></i>
-        <i class="fas fa-times close-icon"></i>
-      </button>
     </div>
-</header>
-
+  </header>
 <!-- ================= METTAX DASHCAM SECTION ================= -->
 <section class="accessories-section section-padding">
   <div class="container">
@@ -111,49 +144,484 @@
     <!-- Accessories Grid -->
     <div class="accessories-grid">
 
-      <!-- MettaX MC202N -->
-      <div class="accessory-card" data-animate="zoom-in">
-        <div class="accessory-img">
-          <img src="images/mc202n.jpeg" alt="MettaX MC202N">
-        </div>
-        <div class="accessory-content">
-          <h3>MettaX MC202N</h3>
-          <p>Dual-channel 4G dash camera with AI-powered driver monitoring, ADAS, GPS tracking, and real-time cloud video upload.</p>
-          <div class="accessory-buttons">
-            <a href="#" class="btn-primary get-quote" data-product="MettaX MC202N">Get Quote</a>
-            <a href="#" class="btn-outline read-more"
-              data-product="MettaX MC202N"
-              data-image="images/mc202n.jpeg"
-              data-description="The MettaX MC202N is a smart 4G AI dash camera designed for fleets that need instant visibility. It combines forward and cabin views, ADAS & DMS alerts, GPS, and live cloud streaming for enhanced driver safety and evidence capture."
-              data-reviews='[
-                {"name":"FleetSecure Ltd","review":"Compact, powerful, and accurate — perfect for our delivery fleet."},
-                {"name":"TransSmart Africa","review":"Real-time streaming works flawlessly across routes."}
-              ]'>Read More</a>
-          </div>
-        </div>
-      </div>
+      <!-- ========================= -->
+<!-- METTAX DASHCAM & MDVR SERIES -->
+<!-- ========================= -->
 
-      <!-- MettaX MC403 L -->
-      <div class="accessory-card" data-animate="zoom-in" data-delay="100">
-        <div class="accessory-img">
-          <img src="images/mc403l.jpeg" alt="MettaX MC403 L">
-        </div>
-        <div class="accessory-content">
-          <h3>MettaX MC403 L</h3>
-          <p>Four-channel 1080p AI MDVR system with ADAS, DMS, GPS, and 4G connectivity for complete multi-angle fleet monitoring.</p>
-          <div class="accessory-buttons">
-            <a href="#" class="btn-primary get-quote" data-product="MettaX MC403 L">Get Quote</a>
-            <a href="#" class="btn-outline read-more"
-              data-product="MettaX MC403 L"
-              data-image="images/mc403l.jpeg"
-              data-description="The MettaX MC403 L provides full vehicle coverage using up to four HD cameras. With AI-based driver monitoring, ADAS, GPS tracking, and remote live view, it’s ideal for logistics and passenger fleets."
-              data-reviews='[
-                {"name":"MegaTransport","review":"360° view in one device — impressive clarity."},
-                {"name":"FleetOps Kenya","review":"Seamless cloud connection and alerts make management easy."}
-              ]'>Read More</a>
-          </div>
-        </div>
-      </div>
+<!-- MC201 -->
+<div class="accessory-card" data-animate="zoom-in">
+  <div class="accessory-img">
+    <img src="/images/MC201.webp" alt="Mettax MC201 2-Channel 2K AI Dashcam">
+  </div>
+  <div class="accessory-content">
+    <h3>Mettax MC201 2-Channel 2K AI Dashcam</h3>
+    <p>
+      Dual 2K camera AI dashcam featuring DMS, ADAS, and real-time GPS tracking for intelligent fleet monitoring.
+    </p>
+    <div class="accessory-buttons">
+      <a href="#" class="btn-primary get-quote" data-product="Mettax MC201 2-Channel 2K AI Dashcam">Get Quote</a>
+      <a href="#"
+         class="btn-outline read-more"
+         data-product="Mettax MC201 2-Channel 2K AI Dashcam"
+         data-image="images/mettax-mc201.jpg"
+         data-description="Compact AI dashcam offering 2K front + 1080P cabin recording, DMS for driver fatigue detection, and real-time fleet connectivity."
+         data-features='[
+           "Dual 2K + 1080P channels",
+           "AI DMS & ADAS alerts",
+           "4G LTE + GPS",
+           "Cloud upload and SD backup",
+           "Fleet monitoring dashboard support"
+         ]'>
+         Read More
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MC202X -->
+<div class="accessory-card" data-animate="zoom-in">
+  <div class="accessory-img">
+    <img src="/images/mc202.webp" alt="Mettax MC202X 2-Channel AI Dashcam">
+  </div>
+  <div class="accessory-content">
+    <h3>Mettax MC202X 2-Channel AI Dashcam</h3>
+    <p>
+      Intelligent 2-channel AI dashcam designed for fleet safety, with real-time monitoring and 4G connectivity.
+    </p>
+    <div class="accessory-buttons">
+      <a href="#" class="btn-primary get-quote" data-product="Mettax MC202X 2-Channel AI Dashcam">Get Quote</a>
+      <a href="#"
+         class="btn-outline read-more"
+         data-product="Mettax MC202X 2-Channel AI Dashcam"
+         data-image="images/mettax-mc202x.jpg"
+         data-description="High-definition dual dashcam with DMS, ADAS, GPS, and LTE for safety and productivity optimization."
+         data-features='[
+           "Dual HD cameras",
+           "Driver behavior AI detection",
+           "ADAS for collision avoidance",
+           "4G & GPS support",
+           "Cloud management"
+         ]'>
+         Read More
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MC202N -->
+<div class="accessory-card" data-animate="zoom-in">
+  <div class="accessory-img">
+    <img src="/images/mc202n.jpg" alt="Mettax MC202N 2-Channel AI Dashcam">
+  </div>
+  <div class="accessory-content">
+    <h3>Mettax MC202N 2-Channel AI Dashcam</h3>
+    <p>
+      AI-powered dual dashcam offering fatigue detection, lane departure, and collision warnings in real time.
+    </p>
+    <div class="accessory-buttons">
+      <a href="#" class="btn-primary get-quote" data-product="Mettax MC202N 2-Channel AI Dashcam">Get Quote</a>
+      <a href="#"
+         class="btn-outline read-more"
+         data-product="Mettax MC202N 2-Channel AI Dashcam"
+         data-image="images/mettax-mc202n.jpg"
+         data-description="A dual-channel 1080P AI dashcam with intelligent DMS/ADAS features and 4G remote monitoring capabilities."
+         data-features='[
+           "2-channel HD recording",
+           "AI DMS & ADAS",
+           "4G LTE connectivity",
+           "Remote access and live view",
+           "Event recording"
+         ]'>
+         Read More
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MC202A -->
+<div class="accessory-card" data-animate="zoom-in">
+  <div class="accessory-img">
+    <img src="/images/mc202a.webp" alt="Mettax MC202A 1-Channel AI Dashcam">
+  </div>
+  <div class="accessory-content">
+    <h3>Mettax MC202A 1-Channel AI Dashcam</h3>
+    <p>
+      Compact single-channel AI dashcam with DMS, GPS, and LTE — ideal for light commercial vehicles.
+    </p>
+    <div class="accessory-buttons">
+      <a href="#" class="btn-primary get-quote" data-product="Mettax MC202A 1-Channel AI Dashcam">Get Quote</a>
+      <a href="#"
+         class="btn-outline read-more"
+         data-product="Mettax MC202A 1-Channel AI Dashcam"
+         data-image="images/mettax-mc202a.jpg"
+         data-description="1-channel full HD dashcam equipped with DMS and ADAS, GPS, and cloud connectivity for simple fleet tracking."
+         data-features='[
+           "Full HD front camera",
+           "AI-based DMS & ADAS",
+           "4G LTE and GPS",
+           "Compact design",
+           "Cloud integration"
+         ]'>
+         Read More
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MC202E -->
+<div class="accessory-card" data-animate="zoom-in">
+  <div class="accessory-img">
+    <img src="/images/mc202n.jpg" alt="Mettax MC202E 2-Channel Dashcam">
+  </div>
+  <div class="accessory-content">
+    <h3>Mettax MC202E 2-Channel Dashcam</h3>
+    <p>
+      Dual dashcam for enhanced visual clarity with night vision and GPS-enabled tracking.
+    </p>
+    <div class="accessory-buttons">
+      <a href="#" class="btn-primary get-quote" data-product="Mettax MC202E 2-Channel Dashcam">Get Quote</a>
+      <a href="#"
+         class="btn-outline read-more"
+         data-product="Mettax MC202E 2-Channel Dashcam"
+         data-image="images/mettax-mc202e.jpg"
+         data-description="2-channel high-definition dashcam with GPS, night vision, and seamless cloud access for recorded events."
+         data-features='[
+           "Front + cabin recording",
+           "WDR & night vision",
+           "4G GPS connectivity",
+           "Compact design",
+           "Event-triggered upload"
+         ]'>
+         Read More
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MC401X -->
+<div class="accessory-card" data-animate="zoom-in">
+  <div class="accessory-img">
+    <img src="/images/mc401x.webp" alt="Mettax MC401X 4-Channel AI Dashcam">
+  </div>
+  <div class="accessory-content">
+    <h3>Mettax MC401X 4-Channel AI Dashcam</h3>
+    <p>
+      4-channel AI dashcam providing complete vehicle coverage, DMS/ADAS alerts, and 4G live view.
+    </p>
+    <div class="accessory-buttons">
+      <a href="#" class="btn-primary get-quote" data-product="Mettax MC401X 4-Channel AI Dashcam">Get Quote</a>
+      <a href="#"
+         class="btn-outline read-more"
+         data-product="Mettax MC401X 4-Channel AI Dashcam"
+         data-image="images/mettax-mc401x.jpg"
+         data-description="Comprehensive 4-channel recording solution with AI DMS, ADAS, 4G LTE connectivity, and fleet platform support."
+         data-features='[
+           "Supports up to 4 cameras",
+           "AI DMS & ADAS integration",
+           "4G LTE and GPS tracking",
+           "Full vehicle view coverage",
+           "Fleet management ready"
+         ]'>
+         Read More
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MC401N -->
+<div class="accessory-card" data-animate="zoom-in">
+  <div class="accessory-img">
+    <img src="/images/mc401x.webp" alt="Mettax MC401N 4-Channel AI Dashcam">
+  </div>
+  <div class="accessory-content">
+    <h3>Mettax MC401N 4-Channel AI Dashcam</h3>
+    <p>
+      AI-powered dashcam system capturing multiple vehicle angles with precision and connectivity.
+    </p>
+    <div class="accessory-buttons">
+      <a href="#" class="btn-primary get-quote" data-product="Mettax MC401N 4-Channel AI Dashcam">Get Quote</a>
+      <a href="#"
+         class="btn-outline read-more"
+         data-product="Mettax MC401N 4-Channel AI Dashcam"
+         data-image="images/mettax-mc401n.jpg"
+         data-description="4-channel 1080P AI dashcam with integrated LTE, GPS, and remote monitoring dashboard for fleet operators."
+         data-features='[
+           "1080P 4-channel recording",
+           "AI DMS/ADAS",
+           "4G + GPS integration",
+           "Cloud sync",
+           "Driver event alerts"
+         ]'>
+         Read More
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MC402 -->
+<div class="accessory-card" data-animate="zoom-in">
+  <div class="accessory-img">
+    <img src="/images/MC402.webp" alt="Mettax MC402 4-Channel AI Dashcam">
+  </div>
+  <div class="accessory-content">
+    <h3>Mettax MC402 4-Channel AI Dashcam</h3>
+    <p>
+      Professional 4-channel AI dashcam built for large fleet surveillance and compliance management.
+    </p>
+    <div class="accessory-buttons">
+      <a href="#" class="btn-primary get-quote" data-product="Mettax MC402 4-Channel AI Dashcam">Get Quote</a>
+      <a href="#"
+         class="btn-outline read-more"
+         data-product="Mettax MC402 4-Channel AI Dashcam"
+         data-image="images/mettax-mc402.jpg"
+         data-description="Rugged AI dashcam with multi-channel video, DMS, ADAS, and 4G LTE integration for enterprise fleets."
+         data-features='[
+           "4-channel recording",
+           "AI analytics (DMS/ADAS)",
+           "Cloud-ready storage",
+           "GPS tracking",
+           "Fleet-grade durability"
+         ]'>
+         Read More
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MC403 -->
+<div class="accessory-card" data-animate="zoom-in">
+  <div class="accessory-img">
+    <img src="/images/MC402.webp" alt="Mettax MC403 4-Channel AI Dashcam">
+  </div>
+  <div class="accessory-content">
+    <h3>Mettax MC403 4-Channel AI Dashcam</h3>
+    <p>
+      Advanced 4-channel recording system with AI driver safety and high-definition vehicle coverage.
+    </p>
+    <div class="accessory-buttons">
+      <a href="#" class="btn-primary get-quote" data-product="Mettax MC403 4-Channel AI Dashcam">Get Quote</a>
+      <a href="#"
+         class="btn-outline read-more"
+         data-product="Mettax MC403 4-Channel AI Dashcam"
+         data-image="images/mettax-mc403.jpg"
+         data-description="Enterprise-level 4-channel dashcam offering AI-assisted video monitoring and real-time fleet management tools."
+         data-features='[
+           "4-channel 1080P recording",
+           "ADAS & DMS AI alerts",
+           "4G LTE + GPS",
+           "Cloud and local storage",
+           "Event playback"
+         ]'>
+         Read More
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MC403L -->
+<div class="accessory-card" data-animate="zoom-in">
+  <div class="accessory-img">
+    <img src="/images/MC402.webp" alt="Mettax MC403L 4-Channel AI Dashcam">
+  </div>
+  <div class="accessory-content">
+    <h3>Mettax MC403L 4-Channel AI Dashcam</h3>
+    <p>
+      Enhanced 4-channel AI dashcam with wide-angle coverage, LTE streaming, and AI driver analysis.
+    </p>
+    <div class="accessory-buttons">
+      <a href="#" class="btn-primary get-quote" data-product="Mettax MC403L 4-Channel AI Dashcam">Get Quote</a>
+      <a href="#"
+         class="btn-outline read-more"
+         data-product="Mettax MC403L 4-Channel AI Dashcam"
+         data-image="images/mettax-mc403l.jpg"
+         data-description="Wide-angle, multi-channel AI dashcam with enhanced safety algorithms and real-time data streaming."
+         data-features='[
+           "4-channel full HD",
+           "AI DMS & ADAS",
+           "Wide coverage and low light performance",
+           "Cloud control center",
+           "4G LTE + GPS tracking"
+         ]'>
+         Read More
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MC904 -->
+<div class="accessory-card" data-animate="zoom-in">
+  <div class="accessory-img">
+    <img src="/images/MC904.webp" alt="Mettax MC904 4-Channel AI MDVR">
+  </div>
+  <div class="accessory-content">
+    <h3>Mettax MC904 4-Channel AI MDVR</h3>
+    <p>
+      Compact 4-channel AI MDVR with real-time GPS, LTE streaming, and full AI driver analytics.
+    </p>
+    <div class="accessory-buttons">
+      <a href="#" class="btn-primary get-quote" data-product="Mettax MC904 4-Channel AI MDVR">Get Quote</a>
+      <a href="#"
+         class="btn-outline read-more"
+         data-product="Mettax MC904 4-Channel AI MDVR"
+         data-image="images/mettax-mc904.jpg"
+         data-description="Professional 4-channel AI mobile DVR offering ADAS, DMS, GPS, and LTE capabilities for advanced fleet monitoring."
+         data-features='[
+           "4 AHD inputs",
+           "AI-powered video analysis",
+           "4G LTE + GPS",
+           "SSD + cloud storage",
+           "Supports remote playback"
+         ]'>
+         Read More
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MC904P -->
+<div class="accessory-card" data-animate="zoom-in">
+  <div class="accessory-img">
+    <img src="/images/MC904.webp" alt="Mettax MC904P 4-Channel AI MDVR">
+  </div>
+  <div class="accessory-content">
+    <h3>Mettax MC904P 4-Channel AI MDVR</h3>
+    <p>
+      Ruggedized AI MDVR with advanced storage options, ADAS/DMS, and 4G connectivity.
+    </p>
+    <div class="accessory-buttons">
+      <a href="#" class="btn-primary get-quote" data-product="Mettax MC904P 4-Channel AI MDVR">Get Quote</a>
+      <a href="#"
+         class="btn-outline read-more"
+         data-product="Mettax MC904P 4-Channel AI MDVR"
+         data-image="images/mettax-mc904p.jpg"
+         data-description="Enhanced MDVR for demanding environments, combining AI analysis, LTE streaming, and large storage capacity."
+         data-features='[
+           "4-channel AHD inputs",
+           "AI video analytics",
+           "4G + GPS",
+           "SSD/HDD support",
+           "Remote live view"
+         ]'>
+         Read More
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MC908 -->
+<div class="accessory-card" data-animate="zoom-in">
+  <div class="accessory-img">
+    <img src="/images/mc908.jpg" alt="Mettax MC908 8-Channel AI MDVR">
+  </div>
+  <div class="accessory-content">
+    <h3>Mettax MC908 8-Channel AI MDVR</h3>
+    <p>
+      8-channel AI MDVR ideal for large fleet video management, supporting both AHD and IP cameras.
+    </p>
+    <div class="accessory-buttons">
+      <a href="#" class="btn-primary get-quote" data-product="Mettax MC908 8-Channel AI MDVR">Get Quote</a>
+      <a href="#"
+         class="btn-outline read-more"
+         data-product="Mettax MC908 8-Channel AI MDVR"
+         data-image="images/mettax-mc908.jpg"
+         data-description="Heavy-duty AI MDVR capable of handling 8 channels with real-time analytics, GPS, and LTE fleet control."
+         data-features='[
+           "8 video channels",
+           "AI DMS/ADAS integration",
+           "AHD + IP hybrid inputs",
+           "4G GPS connectivity",
+           "Remote fleet control"
+         ]'>
+         Read More
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ====== MC908F ====== -->
+<div class="accessory-card">
+  <div class="accessory-img">
+    <img src="/images/908ff.webp" alt="MettaX MC908F 8-CH IP66 AI MDVR">
+  </div>
+  <div class="accessory-content">
+    <h3>MC908F 8-CH IP66 AI MDVR</h3>
+    <p>
+      Rugged 8-channel AI MDVR with IP66 waterproof design, 4G connectivity, and intelligent driver monitoring for extreme fleet environments.
+    </p>
+    <div class="accessory-buttons">
+      <a href="#" class="btn-primary">Get Quote</a>
+      <a href="#" class="btn-outline read-more"
+         data-product="MC908F 8-CH IP66 AI MDVR"
+         data-image="images/mc908f.jpg"
+         data-description="The MC908F offers 8-channel recording with AI analytics, waterproof IP66 rating, and seamless 4G LTE connectivity — ideal for heavy-duty fleet operations."
+         data-features='[
+           "8-Channel AHD/IP recording with AI video analysis",
+           "IP66 waterproof and dustproof design for harsh environments",
+           "Supports up to 2TB SSD storage with backup recording",
+           "Integrated 4G LTE + GPS for live tracking and video streaming",
+           "Driver monitoring and ADAS support for enhanced safety"
+         ]'>Read More</a>
+    </div>
+  </div>
+</div>
+
+<!-- ====== MC912 ====== -->
+<div class="accessory-card">
+  <div class="accessory-img">
+    <img src="/images/MC912_2.webp" alt="MettaX MC912 12-Channel AI MDVR">
+  </div>
+  <div class="accessory-content">
+    <h3>MC912 12-Channel AI MDVR</h3>
+    <p>
+      High-performance 12-channel AI MDVR supporting up to 12 cameras for comprehensive vehicle coverage and intelligent analytics.
+    </p>
+    <div class="accessory-buttons">
+      <a href="#" class="btn-primary">Get Quote</a>
+      <a href="#" class="btn-outline read-more"
+         data-product="MC912 12-Channel AI MDVR"
+         data-image="images/mc912.jpg"
+         data-description="The MC912 supports 12-channel video input (4 AHD + 8 IP) for large fleet vehicles with AI DMS, ADAS, and remote cloud access."
+         data-features='[
+           "12-channel hybrid (4 AHD + 8 IP) video recording",
+           "AI-based driver monitoring and advanced driver assistance",
+           "Supports 4G, Wi-Fi, and GPS modules for live data access",
+           "Large-capacity storage with SSD and SD card backup",
+           "Centralized fleet management and real-time alerts"
+         ]'>Read More</a>
+    </div>
+  </div>
+</div>
+
+<!-- ====== MC912I ====== -->
+<div class="accessory-card">
+  <div class="accessory-img">
+    <img src="/images/MC912_2 (1).webp" alt="MettaX MC912I 12-CH AI MDVR">
+  </div>
+  <div class="accessory-content">
+    <h3>MC912I 12-CH AI MDVR</h3>
+    <p>
+      Advanced 12-channel AI MDVR with intelligent analytics, hybrid input support, and integrated cloud connectivity for total fleet visibility.
+    </p>
+    <div class="accessory-buttons">
+      <a href="#" class="btn-primary">Get Quote</a>
+      <a href="#" class="btn-outline read-more"
+         data-product="MC912I 12-CH AI MDVR"
+         data-image="images/mc912i.jpg"
+         data-description="MC912I provides AI-enhanced multi-channel video recording with driver assistance, event detection, and real-time monitoring via 4G/Wi-Fi."
+         data-features='[
+           "12-Channel AI MDVR with hybrid input (AHD + IP)",
+           "Supports DMS, ADAS, and fatigue detection systems",
+           "4G LTE, Wi-Fi, and GPS connectivity for cloud integration",
+           "High-speed SSD and SD storage options",
+           "Designed for buses, logistics fleets, and heavy transport"
+         ]'>Read More</a>
+    </div>
+  </div>
+</div>
+
+
+
+
 
     </div>
   </div>
@@ -163,15 +631,24 @@
 <div id="accessoryModal" class="modal">
   <div class="modal-content">
     <span class="modal-close">&times;</span>
-    <img id="modalImage" src="" alt="Accessory Image">
+    <img id="modalImage" src="" alt="Tracker Image">
+    
     <h3 id="modalTitle"></h3>
     <p id="modalDescription"></p>
-
+    
+    <!-- ✅ Key Features Section -->
+    <div id="modalFeatures" class="features-section"></div>
+    
+    <!-- ✅ Customer Reviews Section -->
     <div id="modalReviews" class="reviews-section"></div>
 
-    <a id="modalQuoteBtn" class="btn-primary modal-whatsapp" target="_blank">Request Quote on WhatsApp</a>
+    <!-- ✅ WhatsApp Quote Button -->
+    <a id="modalQuoteBtn" class="btn-primary modal-whatsapp" target="_blank">
+      Request Quote on WhatsApp
+    </a>
   </div>
 </div>
+
 
 <footer id="footer" class="footer-section">
   <div class="footer-overlay"></div>
@@ -266,6 +743,6 @@
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
-<script src="js/main.js"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>
