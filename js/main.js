@@ -1,70 +1,67 @@
-// ====================== Dynamic Year ======================
 document.addEventListener("DOMContentLoaded", () => {
+  // ======================
+  // Menu Toggle & Dropdown on Mobile
+  // ======================
+  const menuToggle = document.getElementById('menu-toggle');
+  const navbar = document.getElementById('navbar');
+  const dropdownLinks = document.querySelectorAll('.dropdown > a');
+
+  menuToggle?.addEventListener('click', () => {
+    navbar?.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+  });
+
+  dropdownLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        link.parentElement.classList.toggle('active');
+      }
+    });
+  });
+
+  // ======================
+  // Scroll Header Hide/Show
+  // ======================
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > lastScrollY && currentScroll > 100) {
+      // Scrolling down → hide header
+      document.body.classList.add('header-hidden');
+    } else {
+      // Scrolling up → show header
+      document.body.classList.remove('header-hidden');
+    }
+
+    lastScrollY = currentScroll;
+  });
+
+  // ======================
+  // WhatsApp Get Quote Buttons
+  // ======================
+  const whatsappNumber = "254700780203";
+  document.querySelectorAll(".get-quote").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      const product = btn.getAttribute("data-product");
+      const message = `Hello! I'm interested in getting a quote for ${product}. Please share more details.`;
+      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    });
+  });
+
+  // ======================
+  // Footer Year Update
+  // ======================
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
-});
 
-// ====================== Navigation ======================
-document.addEventListener("DOMContentLoaded", () => {
-  const navToggle = document.querySelector(".nav-toggle");
-  const navList = document.querySelector(".nav__list");
-  const dropdownParents = document.querySelectorAll(".nav__item--dropdown");
-  const submenuParents = document.querySelectorAll(".dropdown-menu__item--submenu");
-
-  // Toggle main mobile menu
-  if (navToggle && navList) {
-    navToggle.addEventListener("click", () => {
-      navList.classList.toggle("show");
-      navToggle.classList.toggle("active");
-    });
-  }
-
-  // Products dropdown toggle (mobile only)
-  dropdownParents.forEach(parent => {
-    const link = parent.querySelector(".dropdown-toggle") || parent.querySelector("a");
-    if (!link) return;
-    link.addEventListener("click", function (e) {
-      if (window.innerWidth > 992) return;
-      e.preventDefault();
-      dropdownParents.forEach(other => {
-        if (other !== parent) other.classList.remove("open");
-      });
-      parent.classList.toggle("open");
-    });
-  });
-
-  // Submenu toggling
-  submenuParents.forEach(parent => {
-    const link = parent.querySelector("a");
-    if (!link) return;
-    link.addEventListener("click", function (e) {
-      if (window.innerWidth > 992) return;
-      e.preventDefault();
-      submenuParents.forEach(other => {
-        if (other !== parent) other.classList.remove("open");
-      });
-      parent.classList.toggle("open");
-    });
-  });
-});
-
-// ====================== Header Hide on Scroll ======================
-let lastScrollTop = 0;
-const header = document.querySelector('.site-header');
-window.addEventListener('scroll', () => {
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  if (header) {
-    if (scrollTop > lastScrollTop) {
-      header.classList.add('hide-header'); // Scrolling down
-    } else {
-      header.classList.remove('hide-header'); // Scrolling up
-    }
-  }
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-});
-
-// ====================== Animate on Scroll ======================
-document.addEventListener("DOMContentLoaded", () => {
+  // ======================
+  // Animate on Scroll
+  // ======================
   const animateElements = document.querySelectorAll('[data-animate]');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -87,168 +84,150 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   window.addEventListener("scroll", revealOnScroll);
   revealOnScroll();
-});
 
-// ====================== Slider ======================
-document.addEventListener("DOMContentLoaded", () => {
+  // ======================
+  // Slider
+  // ======================
   const slides = document.querySelectorAll('.slider__slide');
   const dotsContainer = document.querySelector('.slider__dots');
-  if (!slides.length || !dotsContainer) return;
+  if (slides.length && dotsContainer) {
+    let currentIndex = 0;
 
-  let currentIndex = 0;
-
-  // Create dots dynamically
-  slides.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.addEventListener('click', () => showSlide(i));
-    dotsContainer.appendChild(dot);
-  });
-
-  const dots = document.querySelectorAll('.slider__dots button');
-
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('active', i === index);
-      dots[i].classList.toggle('active', i === index);
+    // Create dots dynamically
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.addEventListener('click', () => showSlide(i));
+      dotsContainer.appendChild(dot);
     });
-    currentIndex = index;
-  }
 
-  function autoSlide() {
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
-  }
+    const dots = dotsContainer.querySelectorAll('button');
 
-  setInterval(autoSlide, 80000);
-  showSlide(0);
-});
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+        dots[i].classList.toggle('active', i === index);
+      });
+      currentIndex = index;
+    }
 
-// ====================== Clients Slider ======================
-document.addEventListener("DOMContentLoaded", () => {
-  const track = document.querySelector(".clients-track");
-  const slides = document.querySelectorAll(".client-slide");
-  const dots = document.querySelectorAll(".clients-dots .dot");
-
-  if (!track || !slides.length || !dots.length) return; // Safety check
-
-  let currentIndex = 0;
-  const totalSlides = slides.length;
-
-  function showSlide(index) {
-    track.style.transform = `translateX(-${index * 100}%)`;
-    dots.forEach(dot => dot.classList.remove("active"));
-    dots[index].classList.add("active");
-  }
-
-  // Handle dot click navigation
-  dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
-      currentIndex = i;
+    function autoSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
       showSlide(currentIndex);
+    }
+
+    setInterval(autoSlide, 8000); // Adjusted to 8 seconds for typical UX
+    showSlide(0);
+  }
+
+  // ======================
+  // Clients Slider
+  // ======================
+  const track = document.querySelector(".clients-track");
+  const clientSlides = document.querySelectorAll(".client-slide");
+  const clientDots = document.querySelectorAll(".clients-dots .dot");
+
+  if (track && clientSlides.length && clientDots.length) {
+    let currentIndex = 0;
+    const totalSlides = clientSlides.length;
+
+    function showClientSlide(index) {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      clientDots.forEach(dot => dot.classList.remove("active"));
+      clientDots[index].classList.add("active");
+    }
+
+    clientDots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        currentIndex = i;
+        showClientSlide(currentIndex);
+      });
     });
-  });
 
-  // Auto-slide every 4 seconds
-  setInterval(() => {
-    currentIndex = (currentIndex + 1) % totalSlides;
-    showSlide(currentIndex);
-  }, 4000);
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      showClientSlide(currentIndex);
+    }, 4000);
 
-  // Initialize first slide
-  showSlide(currentIndex);
-});
+    showClientSlide(currentIndex);
+  }
 
-// =======================
-// MODAL FUNCTIONALITY (UPDATED)
-// =======================
-document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.querySelector(".modal");
-  const modalImage = modal.querySelector(".modal-content img");
-  const modalTitle = modal.querySelector(".modal-content h3");
-  const modalDescription = modal.querySelector(".modal-content p");
-  const reviewsContainer = modal.querySelector(".reviews-section");
-  const featuresContainer = modal.querySelector(".features-section"); // NEW
-  const modalClose = modal.querySelector(".modal-close");
-  const readMoreButtons = document.querySelectorAll(".read-more");
+  // ======================
+  // Modal Functionality
+  // ======================
+  const modal = document.getElementById("accessoryModal");
+  if (modal) {
+    const modalImage = modal.querySelector("#modalImage");
+    const modalTitle = modal.querySelector("#modalTitle");
+    const modalDescription = modal.querySelector("#modalDescription");
+    const reviewsContainer = modal.querySelector("#modalReviews");
+    const modalClose = modal.querySelector(".modal-close");
+    const modalQuoteBtn = modal.querySelector("#modalQuoteBtn");
 
-  readMoreButtons.forEach(button => {
-    button.addEventListener("click", (e) => {
-      e.preventDefault();
+    const readMoreButtons = document.querySelectorAll(".read-more");
 
-      // Retrieve data attributes
-      const product = button.getAttribute("data-product");
-      const imageSrc = button.getAttribute("data-image");
-      const description = button.getAttribute("data-description");
-      const reviewsData = button.getAttribute("data-reviews");
-      const featuresData = button.getAttribute("data-features"); // NEW
+    readMoreButtons.forEach(button => {
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
 
-      // Fill modal content
-      modalImage.src = imageSrc;
-      modalTitle.textContent = product;
-      modalDescription.textContent = description;
+        const product = button.getAttribute("data-product");
+        const imageSrc = button.getAttribute("data-image");
+        const description = button.getAttribute("data-description");
+        const reviewsData = button.getAttribute("data-reviews");
 
-      // =======================
-      // Generate Features List
-      // =======================
-      featuresContainer.innerHTML = "";
-      try {
-        const features = JSON.parse(featuresData);
-        if (features.length > 0) {
-          const featuresHTML = features.map(
-            f => `<li><i class="fas fa-check-circle"></i> ${f}</li>`
-          ).join("");
-          featuresContainer.innerHTML = `
-            <h4>Key Features:</h4>
-            <ul class="feature-list">${featuresHTML}</ul>
-          `;
+        modalImage.src = imageSrc;
+        modalImage.alt = product;
+        modalTitle.textContent = product;
+        modalDescription.textContent = description;
+
+        // Generate Reviews List
+        reviewsContainer.innerHTML = "";
+        try {
+          const reviews = JSON.parse(reviewsData);
+          if (reviews.length > 0) {
+            const reviewsHTML = reviews.map(
+              r => `
+                <div class="review-item">
+                  <p>"${r.review}"</p>
+                  <small>- ${r.name}</small>
+                </div>
+              `
+            ).join("");
+            reviewsContainer.innerHTML = `
+              <h4>Customer Reviews:</h4>
+              ${reviewsHTML}
+            `;
+          }
+        } catch (err) {
+          console.error("Invalid reviews JSON:", err);
         }
-      } catch (err) {
-        console.error("Invalid features JSON:", err);
-      }
 
-      // =======================
-      // Generate Reviews
-      // =======================
-      reviewsContainer.innerHTML = "";
-      try {
-        const reviews = JSON.parse(reviewsData);
-        if (reviews.length > 0) {
-          const reviewsHTML = reviews.map(
-            r => `
-              <div class="review-item">
-                <p>"${r.review}"</p>
-                <small>- ${r.name}</small>
-              </div>
-            `
-          ).join("");
-          reviewsContainer.innerHTML = `
-            <h4>Customer Reviews:</h4>
-            ${reviewsHTML}
-          `;
-        }
-      } catch (err) {
-        console.error("Invalid reviews JSON:", err);
-      }
+        // Update WhatsApp quote button href with message including product name
+        const whatsappMessage = `Hello! I'm interested in getting a quote for ${product}. Please share more details.`;
+        modalQuoteBtn.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-      // Show modal
-      modal.classList.add("show");
-      document.body.classList.add("modal-open");
+        modal.classList.add("show");
+        document.body.classList.add("modal-open");
+      });
     });
-  });
 
-  // =======================
-  // Close modal
-  // =======================
-  modalClose.addEventListener("click", () => {
-    modal.classList.remove("show");
-    document.body.classList.remove("modal-open");
-  });
-
-  // Close when clicking outside modal content
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
+    modalClose.addEventListener("click", () => {
       modal.classList.remove("show");
       document.body.classList.remove("modal-open");
-    }
-  });
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.remove("show");
+        document.body.classList.remove("modal-open");
+      }
+    });
+
+    // Optional: close modal on ESC key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("show")) {
+        modal.classList.remove("show");
+        document.body.classList.remove("modal-open");
+      }
+    });
+  }
 });
