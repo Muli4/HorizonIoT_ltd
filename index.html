@@ -50,14 +50,12 @@
   <!-- 🔹 Main Header -->
   <header class="main-header">
     <div class="container header-content">
-<div class="logo">
-  <a href="index.html">
-    <img src="images/logo.png" alt="Horizon IoT Ltd">
-    <span class="logo-text">HorizonIoT</span>
-  </a>
-</div>
-
-
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Horizon IoT Ltd">
+          <span class="logo-text">HorizonIoT</span>
+        </a>
+      </div>
       <!-- 🔹 Mobile Hamburger Menu -->
       <div class="menu-toggle" id="menu-toggle">
         <i class='bx bx-menu'></i>
@@ -74,26 +72,6 @@
           <li class="dropdown">
             <a href="#">Products <i class='bx bx-chevron-down'></i></a>
             <div class="mega-menu">
-              
-              <div class="mega-column">
-                <h4>CCTV</h4>
-                <a href="#">HD CCTV Cameras</a>
-                <a href="#">IP CCTV Cameras</a>
-                <a href="#">PTZ Cameras</a>
-                <a href="#">Wireless CCTV Cameras</a>
-                <a href="#">Hikvision Cameras</a>
-                <a href="#">Dahua Cameras</a>
-              </div>
-
-              <div class="mega-column">
-                <h4>CCTV Accessories</h4>
-                <a href="#">RG59 Cables</a>
-                <a href="#">CAT 6 Cables</a>
-                <a href="#">BNC Connectors</a>
-                <a href="#">DC Jack Connectors</a>
-                <a href="#">Video Balun Connectors</a>
-                <a href="#">Knock-Out Boxes</a>
-              </div>
 
               <div class="mega-column">
                 <h4>GPS Tracking Devices</h4>
@@ -139,12 +117,6 @@
                 <a href="#">Mettax</a>
                 <a href="#">JimiIoT</a>
                 <a href="#">Hikvision Dashcams</a>
-              </div>
-
-              <div class="mega-column">
-                <h4>Smart Home Devices</h4>
-                <a href="#">TAPO Smart Cameras</a>
-                <a href="#">TAPO Smart Wifi Sockets</a>
               </div>
 
               <div class="mega-column">
@@ -654,5 +626,23 @@
       });
     });
   </script>
+  <script>
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > lastScrollY && currentScroll > 100) {
+      // Scrolling down → hide header
+      document.body.classList.add('header-hidden');
+    } else {
+      // Scrolling up → show header
+      document.body.classList.remove('header-hidden');
+    }
+
+    lastScrollY = currentScroll;
+  });
+</script>
+
 </body>
 </html>

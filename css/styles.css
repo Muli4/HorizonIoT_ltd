@@ -208,7 +208,7 @@ body {
   display: block;
   color: var(--color-mega-link);
   text-decoration: none;
-  font-size: 9px;
+  font-size: 13px;
   padding: 5px 0;
   transition: var(--transition);
 }
@@ -218,6 +218,11 @@ body {
   padding-left: 6px;
   text-decoration: none;
 }
+/* Disable underline hover effect for mega menu links */
+.navbar .mega-menu .mega-column a::after {
+  content: none !important;
+}
+
 
 /* ===============================
    ANIMATIONS
@@ -381,6 +386,22 @@ body {
 
 .subheader .left-info a:hover {
   color: var(--color-highlight);
+}
+
+/* ===== Header Hide/Show Animation ===== */
+.subheader,
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+/* Hidden state */
+.header-hidden .subheader,
+.header-hidden .main-header {
+  transform: translateY(-100%);
+  opacity: 0;
 }
 
 
@@ -635,7 +656,7 @@ body {
       rgba(34, 12, 58, 0.85),
       rgba(10, 10, 10, 0.85)
     ),
-    url("../images/truck-logistics-operation-dusk.jpg")
+    url("../images/automation.jpg")
       center/cover no-repeat;
   z-index: 0;
 }
@@ -996,7 +1017,7 @@ body {
   position: absolute;
   inset: 0;
   background: linear-gradient(rgba(10,10,10,0.85), rgba(34,12,58,0.85)),
-              url("../images/vehicle-move.jpg")
+              url("../images/automation.jpg")
               center/cover no-repeat;
   z-index: 0;
 }
