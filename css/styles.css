@@ -2449,6 +2449,21 @@ body {
   gap: 1.2rem;
 }
 
+/* NETWORK BADGE */
+.network-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
 .accessory-card {
   background: var(--color-white);
   border-radius: 0.8rem;
