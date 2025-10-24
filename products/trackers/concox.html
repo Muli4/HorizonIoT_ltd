@@ -15,87 +15,127 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="icon" href="images/logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="icon" href="/images/logo.png" type="image/x-icon" />
 </head>
 <body>
 
-  <!-- ================= HEADER ================= -->
-  <header class="site-header">
-
-    <!-- ===== Top Bar ===== -->
-    <div class="header-top">
-      <div class="container header-top__container">
-        <div class="header-top__contact">
-          <a href="tel:+254700780203"><i class="fas fa-phone-alt"></i> +254 700 780 203</a>
-          <span class="separator">|</span>
+  <!-- 🔹 Subheader -->
+  <div class="subheader">
+    <div class="container subheader-content">
+      <div class="left-info">
+        <span>
+          <i class='bx bx-phone'></i> 
+          <a href="tel:+254700780203">+254 700 780 203</a> |
           <a href="tel:+254722339434">+254 722 339 434</a>
-          <span class="separator">|</span>
-          <a href="mailto:info@horizoniot.com"><i class="fas fa-envelope"></i> info@horizoniot.com</a>
-        </div>
-        <div class="header-top__social">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        </div>
+        </span>
+        <span>
+          <i class='bx bx-envelope'></i> 
+          <a href="mailto:info@horizoniotltd.com">info@horizoniotltd.com</a>
+        </span>
+        <span>
+          <i class='bx bx-map'></i> 
+          <a href="https://www.google.com/maps?q=Nairobi,Kenya" target="_blank">Nairobi, Kenya</a>
+        </span>
+      </div>
+      <div class="right-socials">
+        <a href="#"><i class='bx bxl-facebook'></i></a>
+        <a href="#"><i class='bx bxl-twitter'></i></a>
+        <a href="#"><i class='bx bxl-instagram'></i></a>
+        <a href="#"><i class='bx bxl-linkedin'></i></a>
       </div>
     </div>
+  </div>
 
-    <!-- ===== Main Navigation ===== -->
-    <div class="header-main container">
-      <a href="index.html" class="header-main__logo">
-        <img src="images/logo.png" alt="Horizon IoT Ltd Logo" class="logo-img" />
-        <span class="logo-text">Horizon IoT Ltd</span>
-      </a>
+  <!-- 🔹 Main Header -->
+  <header class="main-header">
+    <div class="container header-content">
+      <div class="logo">
+        <a href="/index.html">
+          <img src="/images/logo.png" alt="Horizon IoT Ltd">
+          <span class="logo-text">HorizonIoT</span>
+        </a>
+      </div>
+      <!-- 🔹 Mobile Hamburger Menu -->
+      <div class="menu-toggle" id="menu-toggle">
+        <i class='bx bx-menu'></i>
+      </div>
 
-      <nav class="nav" id="main-navigation">
-        <ul class="nav__list">
-          <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
-          <li class="nav__item"><a href="about.html" class="nav__link">About Us</a></li>
+      <!-- 🔹 Navigation Menu -->
+      <nav class="navbar" id="navbar">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/solutions.html">Solutions</a></li>
 
-          <!-- Dropdown Menu -->
-          <li class="nav__item nav__item--dropdown">
-            <a href="#" class="nav__link dropdown-toggle">Products <i class="fas fa-chevron-down"></i></a>
-            <ul class="dropdown-menu">
-              <li class="dropdown-menu__item nav__link--active"><a href="accessories.html">Accessories</a></li>
+          <!-- 🌐 Products Mega Menu -->
+          <li class="dropdown">
+            <a href="#">Products <i class='bx bx-chevron-down'></i></a>
+            <div class="mega-menu">
 
-              <li class="dropdown-menu__item dropdown-menu__item--submenu">
-                <a href="#">Dash Cameras <i class="fas fa-angle-right"></i></a>
-                <ul class="submenu">
-                  <li><a href="mettax.html">MettaX</a></li>
-                  <li><a href="jimilIoT.html">JimilIoT</a></li>
-                </ul>
-              </li>
+              <div class="mega-column">
+                <h4>Trackers</h4>
+                <a href="/products/trackers/telnotika.html">Teltonika</a>
+                <a href="/products/trackers/concox.html">Concox</a>
+                <a href="/products/trackers/Others">Extra Trackers</a>
+              </div>
 
-              <li class="dropdown-menu__item dropdown-menu__item--submenu">
-                <a href="#">Fuel Sensors <i class="fas fa-angle-right"></i></a>
-                <ul class="submenu">
-                  <li><a href="escort.html">Escort</a></li>
-                </ul>
-              </li>
+              <div class="mega-column">
+                <h4>Other Trackers</h4>
+                <a href="/products/GPS Tracking Devices/office.html">IT & Office Equipment</a>
+                <a href="/products/GPS Tracking Devices/Infrastructure.html">Infrastructure & Facilities</a>
+                <a href="/products/GPS Tracking Devices/specialized.html">Specialized Equipments</a>
+              </div>
 
-              <li class="dropdown-menu__item dropdown-menu__item--submenu">
-                <a href="#">Trackers <i class="fas fa-angle-right"></i></a>
-                <ul class="submenu">
-                  <li><a href="telnotika.html">Teltonika</a></li>
-                  <li><a href="concox.html">Concox</a></li>
-                </ul>
-              </li>
-            </ul>
+              <div class="mega-column">
+                <h4>Sensors</h4>
+                <a href="/products/Monitoring/escort.html">Escort</a>
+                <a href="/products/Monitoring/eurosens.html">Eurosens</a>
+              </div>
+
+              <div class="mega-column">
+                <h4>Dashcams</h4>
+                <a href="/products/Dashcam/howen.html">Howen</a>
+                <a href="/products/Dashcam/mettax.html">Mettax</a>
+                <a href="/products/Dashcam/jimilIoT.html">JimiIoT</a>
+              </div>
+
+              <div class="mega-column">
+                <h4>E-Locks</h4>
+                <a href="/products/E-locks/jointech.html">Jointech</a>
+                <a href="/products/E-locks/topfly.html">Topfly</a>
+              </div>
+
+              <div class="mega-column">
+                <h4>Accessories</h4>
+                <a href="/products/accessories.html">Accessories</a>
+              </div>
+
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#">Tracking Platforms<i class='bx bx-chevron-down'></i></a>
+            <div class="mega-menu">
+              <div class="mega-column">
+                <h4>Tracking Platforms</h4>
+                 <a href="https://wialon.com/en/" target="_blank" rel="noopener noreferrer">Wialon</a>
+                 <a href="https://www.gps-server.net/" target="_blank" rel="noopener noreferrer">GPS Server</a>
+                 <a href="https://www.tracksolidpro.com/" target="_blank" rel="noopener noreferrer">Tracksolid Pro</a>
+                 <a href="https://www.pilotfleet.io/" target="_blank" rel="noopener noreferrer">Pilot Fleet</a>
+                 <a href="https://www.imettax.com/" target="_blank" rel="noopener noreferrer">iMettax</a>
+                 <a href="https://www.protrack365.com/" target="_blank" rel="noopener noreferrer">Protrack</a>
+                 <a href="https://www.owenvss.com/" target="_blank" rel="noopener noreferrer">Owen VSS</a>
+                <a href="https://gpswoksi.com/" target="_blank" rel="noopener noreferrer">GPS WOKSI</a>
+              </div>
+
+            </div>
           </li>
 
-          <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
-          <li class="nav__item"><a href="solutions.html" class="nav__link">Solutions</a></li>
+          <li><a href="/contact.html">Contact</a></li>
         </ul>
       </nav>
-
-      <!-- Mobile Toggle -->
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
-        <i class="fas fa-bars open-icon"></i>
-        <i class="fas fa-times close-icon"></i>
-      </button>
     </div>
-</header>
+  </header>
 
 <!-- ================= CONCOX TRACKERS SECTION ================= -->
 <section class="accessories-section section-padding">
@@ -111,164 +151,12 @@
     <!-- Concox Grid -->
     <div class="accessories-grid">
 
-      <!-- AT1 -->
-      <div class="accessory-card" data-animate="zoom-in">
-        <div class="accessory-img">
-          <img src="images/AT1.png" alt="Concox AT1">
-        </div>
-        <div class="accessory-content">
-          <h3>AT1</h3>
-          <p>Compact GPS tracker ideal for motorcycles and small vehicles, supporting real-time tracking and geo-fencing.</p>
-          <div class="accessory-buttons">
-            <a href="#" class="btn-primary get-quote" data-product="AT1">Get Quote</a>
-            <a href="#" class="btn-outline read-more"
-               data-product="AT1"
-               data-image="images/AT1.png"
-               data-description="The Concox AT1 is a small, lightweight GPS tracker perfect for motorbikes and scooters. Offers real-time tracking, remote cut-off, and vibration alarms."
-               data-reviews='[
-                 {"name":"Swift Riders","review":"Super compact and accurate for motorbikes."},
-                 {"name":"FleetSmart","review":"Works flawlessly with our tracking platform."}
-               ]'>Read More</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- AT4 -->
-      <div class="accessory-card" data-animate="zoom-in" data-delay="100">
-        <div class="accessory-img">
-          <img src="images/AT4.png" alt="Concox AT4">
-        </div>
-        <div class="accessory-content">
-          <h3>AT4</h3>
-          <p>4G LTE waterproof GPS tracker with magnetic mount and long battery life for assets and vehicles.</p>
-          <div class="accessory-buttons">
-            <a href="#" class="btn-primary get-quote" data-product="AT4">Get Quote</a>
-            <a href="#" class="btn-outline read-more"
-               data-product="AT4"
-               data-image="images/AT4.png"
-               data-description="The AT4 offers up to 3 years of standby time with IPX5 waterproof casing, strong magnet mount, and 4G LTE connectivity for asset tracking."
-               data-reviews='[
-                 {"name":"MegaLogistics","review":"Battery life is amazing! Perfect for trailers."},
-                 {"name":"CargoSecure","review":"Strong magnet and very accurate tracking."}
-               ]'>Read More</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- LG300 -->
-      <div class="accessory-card" data-animate="zoom-in" data-delay="200">
-        <div class="accessory-img">
-          <img src="images/LG300.png" alt="Concox LG300">
-        </div>
-        <div class="accessory-content">
-          <h3>LG300</h3>
-          <p>Vehicle GPS tracker supporting 4G LTE and wide voltage input for versatile installations.</p>
-          <div class="accessory-buttons">
-            <a href="#" class="btn-primary get-quote" data-product="LG300">Get Quote</a>
-            <a href="#" class="btn-outline read-more"
-               data-product="LG300"
-               data-image="images/LG300.png"
-               data-description="The LG300 supports LTE/4G, GPS+LBS positioning, remote cut-off, and wide voltage range. Ideal for cars, trucks, and industrial fleets."
-               data-reviews='[
-                 {"name":"FleetSecure","review":"Highly stable performance and strong signal."},
-                 {"name":"DriveTrack","review":"Great 4G tracker — simple to install."}
-               ]'>Read More</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Personal tracker PL601 -->
-      <div class="accessory-card" data-animate="zoom-in" data-delay="300">
-        <div class="accessory-img">
-          <img src="images/PL601.png" alt="Personal Tracker PL601">
-        </div>
-        <div class="accessory-content">
-          <h3>Personal Tracker PL601</h3>
-          <p>Lightweight personal tracking device designed for safety and live location sharing.</p>
-          <div class="accessory-buttons">
-            <a href="#" class="btn-primary get-quote" data-product="Personal Tracker PL601">Get Quote</a>
-            <a href="#" class="btn-outline read-more"
-               data-product="Personal Tracker PL601"
-               data-image="images/PL601.png"
-               data-description="Compact GPS personal tracker ideal for individuals, kids, and elderly safety monitoring with real-time location sharing and SOS alert."
-               data-reviews='[
-                 {"name":"SafeFamily","review":"Perfect for child safety tracking."},
-                 {"name":"Guardian Care","review":"Simple and reliable personal device."}
-               ]'>Read More</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Personal Tracker QBit M -->
-      <div class="accessory-card" data-animate="zoom-in" data-delay="400">
-        <div class="accessory-img">
-          <img src="images/QBIT-M.png" alt="Personal Tracker QBit M">
-        </div>
-        <div class="accessory-content">
-          <h3>Personal Tracker QBit M</h3>
-          <p>Mini GPS tracker with 4G connectivity and SOS emergency alert feature.</p>
-          <div class="accessory-buttons">
-            <a href="#" class="btn-primary get-quote" data-product="Personal Tracker QBit M">Get Quote</a>
-            <a href="#" class="btn-outline read-more"
-               data-product="Personal Tracker QBit M"
-               data-image="images/QBIT-M.png"
-               data-description="The QBit M combines compact design with 4G connectivity and SOS emergency alert for personal safety and asset protection."
-               data-reviews='[
-                 {"name":"CityTrack","review":"Tiny and very accurate."},
-                 {"name":"CarePlus","review":"SOS feature is a lifesaver."}
-               ]'>Read More</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- V5 -->
-      <div class="accessory-card" data-animate="zoom-in" data-delay="500">
-        <div class="accessory-img">
-          <img src="images/v5.png" alt="Concox V5">
-        </div>
-        <div class="accessory-content">
-          <h3>V5</h3>
-          <p>4G GPS vehicle tracker with remote cut-off and ignition detection features.</p>
-          <div class="accessory-buttons">
-            <a href="#" class="btn-primary get-quote" data-product="V5">Get Quote</a>
-            <a href="#" class="btn-outline read-more"
-               data-product="V5"
-               data-image="images/v5.png"
-               data-description="The Concox V5 features LTE/4G connectivity, ignition detection, fuel cut-off, and wide voltage input — ideal for vehicle fleets."
-               data-reviews='[
-                 {"name":"HaulSecure","review":"Compact and reliable 4G tracker."},
-                 {"name":"LogiFleet","review":"Easy to install and very responsive."}
-               ]'>Read More</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- VG03 -->
-      <div class="accessory-card" data-animate="zoom-in" data-delay="600">
-        <div class="accessory-img">
-          <img src="images/vg03.png" alt="Concox VG03">
-        </div>
-        <div class="accessory-content">
-          <h3>VG03</h3>
-          <p>Vehicle GPS tracker supporting 4G LTE, ignition detection, and remote immobilization.</p>
-          <div class="accessory-buttons">
-            <a href="#" class="btn-primary get-quote" data-product="VG03">Get Quote</a>
-            <a href="#" class="btn-outline read-more"
-               data-product="VG03"
-               data-image="images/vg03.png"
-               data-description="VG03 provides high-precision GPS tracking, remote cut-off, and real-time alerts via LTE for improved fleet security."
-               data-reviews='[
-                 {"name":"MoveSafe","review":"Rock-solid 4G connection."},
-                 {"name":"FleetLink","review":"Top performer in vehicle tracking."}
-               ]'>Read More</a>
-          </div>
-        </div>
-      </div>
-
+  
+      
       <!-- Wetrack 2 -->
       <div class="accessory-card" data-animate="zoom-in" data-delay="700">
         <div class="accessory-img">
-          <img src="images/Wetrack2.png" alt="Wetrack 2">
+          <img src="/images/Wetrack2.png" alt="Wetrack 2">
         </div>
         <div class="accessory-content">
           <h3>Wetrack 2</h3>
@@ -277,11 +165,223 @@
             <a href="#" class="btn-primary get-quote" data-product="Wetrack 2">Get Quote</a>
             <a href="#" class="btn-outline read-more"
                data-product="Wetrack 2"
-               data-image="images/Wetrack2.png"
+               data-image="/images/Wetrack2.png"
                data-description="The Wetrack 2 is a lightweight and affordable GPS tracker offering stable performance, quick installation, and live location updates."
-               data-reviews='[
-                 {"name":"QuickFleet","review":"Perfect budget option with great accuracy."},
-                 {"name":"AutoSecure","review":"Easy to configure and reliable."}
+               data-features='[
+                 "Immobilize a vehicle by cutting off its power source/fuel supply via an installed relay.",
+                 "Wide operating voltage range is suitable for a huge variety of vehicles, including industrial equipment, scooters, golf carts, and more.",
+                 "Constantly detect the ACC/ignition status of the vehicle.",
+                 "Optimized battery protection prevents vehicle batteries from draining out or damage.",
+                 "Rugged design ensures continued optimal performance, even in the toughest conditions.",
+                 "Instant alerts for atypical events such as over-speed, geo-fence entry/exit, power supply disconnection, etc."
+               ]'>Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="accessory-card" data-animate="zoom-in" data-delay="700">
+        <div class="accessory-img">
+          <img src="/images/WeTrack-lite-1.png" alt="Wetrack 2">
+        </div>
+        <div class="accessory-content">
+          <h3>Wetrack Lite</h3>
+          <p>Perfect for car rental, fleet management and logistics, the best-in-class Wetrack Lite mini vehicle GPS tracker is a feather-light, multi-function tracker.</p>
+          <div class="accessory-buttons">
+            <a href="#" class="btn-primary get-quote" data-product="Wetrack 2">Get Quote</a>
+            <a href="#" class="btn-outline read-more"
+               data-product="Wetrack 2"
+               data-image="/images/WeTrack-lite-1.png"
+               data-description="Wetrack Lite - improved accuracy, it is designed specifically to make locating and routing vehicles as simple as possible. The WeTrack Lite’s hidden LED makes the device invisible; drivers won’t know it’s there unless you tell them."
+               data-features='[
+                 "Wide operating voltage range is suitable for a huge variety of vehicles, including industrial equipment, scooters, golf carts, and more.",
+                 "Optimized battery protection prevents vehicle batteries from draining out or damage.",
+                 "Constantly detect the ACC/ignition status of the vehicle.",
+                 "Optimized battery protection prevents vehicle batteries from draining out or damage.",
+                 "Rugged design ensures continued optimal performance, even in the toughest conditions.",
+                 "Instant alerts for atypical events such as over-speed, geo-fence entry/exit, power supply disconnection, etc."
+               ]'>Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- V5 -->
+      <div class="accessory-card" data-animate="zoom-in" data-delay="500">
+        <div class="accessory-img">
+          <img src="/images/v5.png" alt="Concox V5">
+        </div>
+        <div class="accessory-content">
+          <h3>V5</h3>
+          <p>4G GPS vehicle tracker with remote cut-off and ignition detection features.</p>
+          <div class="accessory-buttons">
+            <a href="#" class="btn-primary get-quote" data-product="V5">Get Quote</a>
+            <a href="#" class="btn-outline read-more"
+               data-product="V5"
+               data-image="/images/v5.png"
+               data-description="The Concox V5 features LTE/4G connectivity, ignition detection, fuel cut-off, and wide voltage input — ideal for vehicle fleets."
+               data-features='[
+                 "Wide voltage range (supports 9 V–90 V) — works for cars, trucks and other vehicles.",
+                 "Real-time tracking with multi-GNSS (GPS/GLONASS/Galileo) positioning for strong accuracy < 2.5 m in many cases.",
+                 "Built-in accelerometer / G-sensor for detection of harsh driving behaviour (harsh braking, acceleration, cornering) and tamper alerts.", 
+                 "Remote engine/fuel cut-off capability (via relay control) for theft protection and fleet management."
+               ]'>Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- VG03 -->
+      <div class="accessory-card" data-animate="zoom-in" data-delay="600">
+        <div class="accessory-img">
+          <img src="/images/vg03.png" alt="Concox VG03">
+        </div>
+        <div class="accessory-content">
+          <h3>VG03</h3>
+          <p>Vehicle GPS tracker supporting 4G LTE, ignition detection, and remote immobilization.</p>
+          <div class="accessory-buttons">
+            <a href="#" class="btn-primary get-quote" data-product="VG03">Get Quote</a>
+            <a href="#" class="btn-outline read-more"
+               data-product="VG03"
+               data-image="/images/vg03.png"
+               data-description="VG03 provides high-precision GPS tracking, remote cut-off, and real-time alerts via LTE for improved fleet security."
+               data-features='[
+                "Supports 9-90V wide voltage input (suitable for cars, trucks, motorcycles)",
+                "Mini / compact design with built-in large antenna for fast and accurate positioning",
+                "IP65 dust & water resistant rating for rugged environments",
+                "Ignition / ACC detection to monitor engine status",
+                "Mileage / odometer tracking support",
+                "Remote cut-off control (fuel / power via relay)"
+               ]'>Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- AT1 -->
+      <div class="accessory-card" data-animate="zoom-in">
+        <div class="accessory-img">
+          <img src="/images/AT1.png" alt="Concox AT1">
+        </div>
+        <div class="accessory-content">
+          <h3>AT1</h3>
+          <p>Compact GPS tracker ideal for motorcycles and small vehicles, supporting real-time tracking and geo-fencing.</p>
+          <div class="accessory-buttons">
+            <a href="#" class="btn-primary get-quote" data-product="AT1">Get Quote</a>
+            <a href="#" class="btn-outline read-more"
+               data-product="AT1"
+               data-image="/images/AT1.png"
+               data-description="The Concox AT1 is a small, lightweight GPS tracker perfect for motorbikes and scooters. Offers real-time tracking, remote cut-off, and vibration alarms."
+               data-features='[
+               "A synergy of multiple positioning systems ensures that locations are accurately displayed on the cloud platform",
+               "Ensure around one-month standby time, also this device can be redeployed after charging.",
+               "Near-zero installation; the AT1 tightly and effortlessly fastens to most metal surfaces",
+               "Rugged and reliable design ensures stable operation in extreme environmental conditions.",
+               "Receive a tamper alert when the light sensor detects device removal.",
+               "Allow you to monitor the sounds around the device in all weather conditions."
+               ]'>Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- AT4 -->
+      <div class="accessory-card" data-animate="zoom-in" data-delay="100">
+        <div class="accessory-img">
+          <img src="/images/AT4.png" alt="Concox AT4">
+        </div>
+        <div class="accessory-content">
+          <h3>AT4</h3>
+          <p>4G LTE waterproof GPS tracker with magnetic mount and long battery life for assets and vehicles.</p>
+          <div class="accessory-buttons">
+            <a href="#" class="btn-primary get-quote" data-product="AT4">Get Quote</a>
+            <a href="#" class="btn-outline read-more"
+               data-product="AT4"
+               data-image="/images/AT4.png"
+               data-description="The AT4 offers up to 3 years of standby time with IPX5 waterproof casing, strong magnet mount, and 4G LTE connectivity for asset tracking."
+               data-features='[
+                "A synergy of multiple positioning systems ensures that locations are accurately displayed on the cloud platform.",
+                "Inconspicuous mic allows for remote audio monitoring of the environment around the device.",
+                "When the pressure-sensitive button is loose, you will get notified of device removal.",
+                "Rugged design ensures continued optimal performance, even in the toughest conditions.",
+                "High-capacity battery is ideal for long standby applications, and is easily recharged for re-deployment.",
+                "Near-zero installation; the AT4 tightly and effortlessly fastens to most metal surfaces."
+               ]'>Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- LG300 -->
+      <div class="accessory-card" data-animate="zoom-in" data-delay="200">
+        <div class="accessory-img">
+          <img src="/images/LG300.png" alt="Concox LG300">
+        </div>
+        <div class="accessory-content">
+          <h3>LG300</h3>
+          <p>Vehicle GPS tracker supporting 4G LTE and wide voltage input for versatile installations.</p>
+          <div class="accessory-buttons">
+            <a href="#" class="btn-primary get-quote" data-product="LG300">Get Quote</a>
+            <a href="#" class="btn-outline read-more"
+               data-product="/LG300"
+               data-image="images/LG300.png"
+               data-description="The LG300 supports LTE/4G, GPS+LBS positioning, remote cut-off, and wide voltage range. Ideal for cars, trucks, and industrial fleets."
+               data-features='[
+                "A synergy of multiple positioning systems ensures that locations are accurately displayed on the cloud platform.",
+                "Configurable working modes according to your actual demands.",
+                "Users will be alerted when the remaining battery power of the device falls below 20%.",
+                "Receive a tamper alert when the light sensor detects device removal.",
+                "The device can send an alarm and automatically turn on audio recording after detecting noise.",
+                "Audio recording can be activated through the platform on demand.",
+                "Support updating the device firmware via the delta over-the-air update (OTA)",
+                "High-capacity battery supports long standby applications, and is easily recharged for re-deployment."
+               ]'>Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Personal tracker PL601 -->
+      <div class="accessory-card" data-animate="zoom-in" data-delay="300">
+        <div class="accessory-img">
+          <img src="/images/PL601.png" alt="Personal Tracker PL601">
+        </div>
+        <div class="accessory-content">
+          <h3>Personal Tracker PL601</h3>
+          <p>The PL601 is a compact, portable personal tracker designed to safeguard children and the elderly.</p>
+          <div class="accessory-buttons">
+            <a href="#" class="btn-primary get-quote" data-product="Personal Tracker PL601">Get Quote</a>
+            <a href="#" class="btn-outline read-more"
+               data-product="Personal Tracker PL601"
+               data-image="/images/PL601.png"
+               data-description=" It supports GNSS, Wi-Fi, and LBS positioning, and features 4G Cat 1 connectivity, two-way communication, panic button, geo-fence and route playback, providing comprehensive real-time protection."
+               data-features='[
+                 "The 4G Cat 1 network offers broad coverage and real-time connectivity, allowing remote monitoring of device status and setting adjustments via the app.",
+                 "Supports GNSS, Wi-Fi, and LBS positioning with AGPS assistance, enabling smart switching of methods based on movement and environment for fast and accurate positioning both indoors and outdoors.",
+                 "Supports timing and intelligent modes, allowing for customizable settings based on specific needs.",
+                 "The device features a high-sensitivity microphone and loudspeaker for clear two-way HD audio communication, enabling easy contact with family anytime, anywhere.",
+                 "Press the panic button to send an immediate alert and real-time location for emergency assistance.",
+                 "Instant alerts for SOS, geo-fence entry/exit, low battery, power on/off and abnormal noise.",
+                 "The device is lightweight and compact, with a lanyard accessory for easy carrying."
+               ]'>Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Personal Tracker QBit M -->
+      <div class="accessory-card" data-animate="zoom-in" data-delay="400">
+        <div class="accessory-img">
+          <img src="/images/QBIT-M.png" alt="Personal Tracker QBit M">
+        </div>
+        <div class="accessory-content">
+          <h3>Personal Tracker QBit M</h3>
+          <p>Small volume, compact structure, the Qbit M is an advanced portable tracker designed to handle the personal security of the elderly, children and vulnerable people.</p>
+          <div class="accessory-buttons">
+            <a href="#" class="btn-primary get-quote" data-product="Personal Tracker QBit M">Get Quote</a>
+            <a href="#" class="btn-outline read-more"
+               data-product="Personal Tracker QBit M"
+               data-image="/images/QBIT-M.png"
+               data-description="With LTE-M communication and GNSS positioning technology, the device ensures a solid connection and accurate positioning in almost all cases."
+               data-features='[
+                "With GNSS and nRF cellular positioning (optional) for indoor & outdoor signal coverage, the device can send notifications and upload locations based on moving states.",
+                "Support setting the devices working hours and sleeping hours on demand.",
+                "Press the device panic button to send an immediate alert and real-time location for emergency help or rescue.",
+                "Make the device sound an alarm through the APP command to find the specific vehicle or person.",
+                "Geofencing (connected to WiFi hotspots), used with real-time location services, can notify users via the APP if a device leaves a designated area.",
+                "Small and light, yet with a long standby time, the device is easy to carry."
                ]'>Read More</a>
           </div>
         </div>
@@ -296,13 +396,22 @@
   <div class="modal-content">
     <span class="modal-close">&times;</span>
     <img id="modalImage" src="" alt="Tracker Image">
+    
     <h3 id="modalTitle"></h3>
     <p id="modalDescription"></p>
+    
+    <!-- ✅ Key Features Section -->
+    <div id="modalFeatures" class="features-section"></div>
+    
+    <!-- ✅ Customer Reviews Section -->
     <div id="modalReviews" class="reviews-section"></div>
-    <a id="modalQuoteBtn" class="btn-primary modal-whatsapp" target="_blank">Request Quote on WhatsApp</a>
+
+    <!-- ✅ WhatsApp Quote Button -->
+    <a id="modalQuoteBtn" class="btn-primary modal-whatsapp" target="_blank">
+      Request Quote on WhatsApp
+    </a>
   </div>
 </div>
-
 <footer id="footer" class="footer-section">
   <div class="footer-overlay"></div>
   <div class="footer-glow"></div>
@@ -396,6 +505,6 @@
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
-<script src="js/main.js"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>
