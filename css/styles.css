@@ -2309,7 +2309,7 @@ body {
 =========================== */
 .contact-section {
   background: var(--color-light-bg);
-  padding: 80px 10%;
+  padding: 20px 10%;
   font-family: var(--font-family);
   color: var(--color-text);
 }
