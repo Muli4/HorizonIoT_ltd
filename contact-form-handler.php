@@ -17,22 +17,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail = new PHPMailer(true);
 
     try {
-        // SMTP configuration for HostJaer using SSL
+        // SMTP configuration for HostAfrica using TLS
         $mail->isSMTP();
-        $mail->Host = 'mail.hostjaer.com'; // HostJaer mail server
+        $mail->Host = 'mail.horizoniotltd.com'; // HostAfrica mail server
         $mail->SMTPAuth = true;
-        $mail->Username = 'test@badgertechsolutions.co.ke'; // your new email
-        $mail->Password = 'test2020!'; // your new password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // use SSL encryption
-        $mail->Port = 465; // SSL port
+        $mail->Username = 'info@horizoniotltd.com'; // your email
+        $mail->Password = 'HorizonIoT43!'; // your password
+        $mail->SMTPSecure = 'tls'; // TLS encryption
+        $mail->Port = 587; // TLS port
 
         // Email settings
-        $mail->setFrom('test@badgertechsolutions.co.ke', 'Badger Tech Solutions');
-        $mail->addAddress('test@badgertechsolutions.co.ke'); // where messages are received
+        $mail->setFrom('info@horizoniotltd.com', 'Horizon IoT LTD');
+        $mail->addAddress('info@horizoniotltd.com'); // where messages are received
         $mail->addReplyTo($email, $name);
 
         $mail->isHTML(true);
-        $mail->Subject = 'New Contact Form Submission - Badger Tech Solutions';
+        $mail->Subject = 'New Contact Form Submission - Horizon IoT LTD';
         $mail->Body = "
             <h2>New Message from Website Contact Form</h2>
             <p><strong>Name:</strong> {$name}</p>
@@ -47,19 +47,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Optional confirmation email to sender
         $confirm = new PHPMailer(true);
         $confirm->isSMTP();
-        $confirm->Host = 'mail.hostjaer.com';
+        $confirm->Host = 'mail.horizoniotltd.com';
         $confirm->SMTPAuth = true;
-        $confirm->Username = 'test@badgertechsolutions.co.ke';
-        $confirm->Password = 'test2020!';
-        $confirm->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-        $confirm->Port = 465;
-        $confirm->setFrom('test@badgertechsolutions.co.ke', 'Badger Tech Solutions');
+        $confirm->Username = 'info@horizoniotltd.com';
+        $confirm->Password = 'HorizonIoT43!';
+        $confirm->SMTPSecure = 'tls';
+        $confirm->Port = 587;
+        $confirm->setFrom('info@horizoniotltd.com', 'Horizon IoT LTD');
         $confirm->addAddress($email, $name);
         $confirm->isHTML(true);
-        $confirm->Subject = 'Thank You for Contacting Badger Tech Solutions';
+        $confirm->Subject = 'Thank You for Contacting Horizon IoT LTD';
         $confirm->Body = "
             <p>Hi <strong>{$name}</strong>,</p>
-            <p>Thank you for contacting <strong>Badger Tech Solutions</strong>. We’ve received your message and will get back to you shortly.</p>
+            <p>Thank you for contacting <strong>Horizon IoT LTD</strong>. We’ve received your message and will get back to you shortly.</p>
             <hr>
             <p><em>This is an automated confirmation email — please don’t reply.</em></p>
         ";

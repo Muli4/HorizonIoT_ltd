@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
   menuToggle?.addEventListener('click', () => {
     navbar?.classList.toggle('active');
     menuToggle.classList.toggle('active');
+
+    // ✅ Always show header when menu is open
+    document.body.classList.remove('header-hidden');
   });
 
   dropdownLinks.forEach(link => {
@@ -21,19 +24,23 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ======================
-  // Scroll Header Hide/Show
+  // Scroll Header Hide/Show (Fixed for Mobile)
   // ======================
   let lastScrollY = window.scrollY;
 
   window.addEventListener('scroll', () => {
     const currentScroll = window.scrollY;
+    const isMenuOpen = navbar?.classList.contains('active');
 
-    if (currentScroll > lastScrollY && currentScroll > 100) {
-      // Scrolling down → hide header
-      document.body.classList.add('header-hidden');
-    } else {
-      // Scrolling up → show header
-      document.body.classList.remove('header-hidden');
+    // 🧩 Skip header hiding when the mobile menu is open
+    if (!isMenuOpen) {
+      if (currentScroll > lastScrollY && currentScroll > 100) {
+        // Scrolling down → hide header
+        document.body.classList.add('header-hidden');
+      } else {
+        // Scrolling up → show header
+        document.body.classList.remove('header-hidden');
+      }
     }
 
     lastScrollY = currentScroll;
@@ -150,97 +157,89 @@ document.addEventListener("DOMContentLoaded", () => {
 
     showClientSlide(currentIndex);
   }
-// =======================
-// MODAL FUNCTIONALITY (UPDATED)
-// =======================
 
+  // =======================
+  // MODAL FUNCTIONALITY
+  // =======================
   const modal = document.querySelector(".modal");
-  const modalImage = modal.querySelector(".modal-content img");
-  const modalTitle = modal.querySelector(".modal-content h3");
-  const modalDescription = modal.querySelector(".modal-content p");
-  const reviewsContainer = modal.querySelector(".reviews-section");
-  const featuresContainer = modal.querySelector(".features-section"); // NEW
-  const modalClose = modal.querySelector(".modal-close");
-  const readMoreButtons = document.querySelectorAll(".read-more");
+  if (modal) {
+    const modalImage = modal.querySelector(".modal-content img");
+    const modalTitle = modal.querySelector(".modal-content h3");
+    const modalDescription = modal.querySelector(".modal-content p");
+    const reviewsContainer = modal.querySelector(".reviews-section");
+    const featuresContainer = modal.querySelector(".features-section");
+    const modalClose = modal.querySelector(".modal-close");
+    const readMoreButtons = document.querySelectorAll(".read-more");
 
-  readMoreButtons.forEach(button => {
-    button.addEventListener("click", (e) => {
-      e.preventDefault();
+    readMoreButtons.forEach(button => {
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
 
-      // Retrieve data attributes
-      const product = button.getAttribute("data-product");
-      const imageSrc = button.getAttribute("data-image");
-      const description = button.getAttribute("data-description");
-      const reviewsData = button.getAttribute("data-reviews");
-      const featuresData = button.getAttribute("data-features"); // NEW
+        // Retrieve data attributes
+        const product = button.getAttribute("data-product");
+        const imageSrc = button.getAttribute("data-image");
+        const description = button.getAttribute("data-description");
+        const reviewsData = button.getAttribute("data-reviews");
+        const featuresData = button.getAttribute("data-features");
 
-      // Fill modal content
-      modalImage.src = imageSrc;
-      modalTitle.textContent = product;
-      modalDescription.textContent = description;
+        // Fill modal content
+        modalImage.src = imageSrc;
+        modalTitle.textContent = product;
+        modalDescription.textContent = description;
 
-      // =======================
-      // Generate Features List
-      // =======================
-      featuresContainer.innerHTML = "";
-      try {
-        const features = JSON.parse(featuresData);
-        if (features.length > 0) {
-          const featuresHTML = features.map(
-            f => `<li> ${f}</li>`
-          ).join("");
-          featuresContainer.innerHTML = `
-            <h4>Key Features:</h4>
-            <ul class="feature-list">${featuresHTML}</ul>
-          `;
+        // Features list
+        featuresContainer.innerHTML = "";
+        try {
+          const features = JSON.parse(featuresData);
+          if (features.length > 0) {
+            const featuresHTML = features.map(f => `<li>${f}</li>`).join("");
+            featuresContainer.innerHTML = `
+              <h4>Key Features:</h4>
+              <ul class="feature-list">${featuresHTML}</ul>
+            `;
+          }
+        } catch (err) {
+          console.error("Invalid features JSON:", err);
         }
-      } catch (err) {
-        console.error("Invalid features JSON:", err);
-      }
 
-      // =======================
-      // Generate Reviews
-      // =======================
-      reviewsContainer.innerHTML = "";
-      try {
-        const reviews = JSON.parse(reviewsData);
-        if (reviews.length > 0) {
-          const reviewsHTML = reviews.map(
-            r => `
+        // Reviews list
+        reviewsContainer.innerHTML = "";
+        try {
+          const reviews = JSON.parse(reviewsData);
+          if (reviews.length > 0) {
+            const reviewsHTML = reviews.map(r => `
               <div class="review-item">
                 <p>"${r.review}"</p>
                 <small>- ${r.name}</small>
               </div>
-            `
-          ).join("");
-          reviewsContainer.innerHTML = `
-            <h4>Customer Reviews:</h4>
-            ${reviewsHTML}
-          `;
+            `).join("");
+            reviewsContainer.innerHTML = `
+              <h4>Customer Reviews:</h4>
+              ${reviewsHTML}
+            `;
+          }
+        } catch (err) {
+          console.error("Invalid reviews JSON:", err);
         }
-      } catch (err) {
-        console.error("Invalid reviews JSON:", err);
-      }
 
-      // Show modal
-      modal.classList.add("show");
-      document.body.classList.add("modal-open");
+        // Show modal
+        modal.classList.add("show");
+        document.body.classList.add("modal-open");
+      });
     });
-  });
 
-  // =======================
-  // Close modal
-  // =======================
-  modalClose.addEventListener("click", () => {
-    modal.classList.remove("show");
-    document.body.classList.remove("modal-open");
-  });
-
-  // Close when clicking outside modal content
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
+    // Close modal
+    modalClose.addEventListener("click", () => {
       modal.classList.remove("show");
       document.body.classList.remove("modal-open");
-    }
-  });
+    });
+
+    // Close when clicking outside
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.remove("show");
+        document.body.classList.remove("modal-open");
+      }
+    });
+  }
 });
