@@ -641,10 +641,10 @@ body {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-      rgba(34, 12, 58, 0.85),
-      rgba(10, 10, 10, 0.85)
+      rgba(34, 12, 58, 0.2),
+      rgba(10, 10, 10, 0.3)
     ),
-    url("../images/automation.jpg")
+    url("../images/blank-cargo-truck-road.webp")
       center/cover no-repeat;
   z-index: 0;
 }
@@ -1004,8 +1004,8 @@ body {
 .why-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(10,10,10,0.85), rgba(34,12,58,0.85)),
-              url("../images/automation.jpg")
+  background: linear-gradient(rgba(10,10,10,0.4), rgba(34,12,58,0.5)),
+              url("../images/vehicle-move.webp")
               center/cover no-repeat;
   z-index: 0;
 }
@@ -1521,7 +1521,7 @@ body {
   width: 100%; height: 100%;
   background: 
     linear-gradient(rgba(255, 255, 255, 0.1), rgba(255,255,255,0.2)),
-    url('../images/vehicle-move.jpg') center/cover no-repeat;
+    url('../images/vehicle-move.webp') center/cover no-repeat;
   z-index: 0;
   opacity: 0.5;
   animation: bgShift 15s ease-in-out infinite alternate;
@@ -1573,7 +1573,7 @@ body {
 }
 
 .hzn-subtitle {
-  color: #555;
+  color: #333;
   font-size: 1rem;
   margin-top: 8px;
 }
@@ -1644,7 +1644,7 @@ body {
   max-width: 700px;
   margin: 0 auto 40px auto;
   font-size: 1rem;
-  color: #555;
+  color: #333;
 }
 
 /* Features */
@@ -1925,7 +1925,7 @@ body {
 .client-slide img {
   width: 240px; /* increased logo size */
   height: auto;
-  filter: brightness(0) invert(1);
+  filter: brightness(0.9) invert(0.8);
   opacity: 0.9;
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
