@@ -2,13 +2,11 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// Include PHPMailer library
 require 'PHPMailer-master/src/Exception.php';
 require 'PHPMailer-master/src/PHPMailer.php';
 require 'PHPMailer-master/src/SMTP.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sanitize inputs
     $name = htmlspecialchars(trim($_POST['name']));
     $email = htmlspecialchars(trim($_POST['email']));
     $country = htmlspecialchars(trim($_POST['country']));
@@ -17,18 +15,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail = new PHPMailer(true);
 
     try {
-        // SMTP configuration for HostAfrica using TLS
+        // ✅ Gmail SMTP configuration
         $mail->isSMTP();
-        $mail->Host = 'mail.horizoniotltd.com'; // HostAfrica mail server
+        $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'info@horizoniotltd.com'; // your email
-        $mail->Password = 'HorizonIoT43!'; // your password
-        $mail->SMTPSecure = 'tls'; // TLS encryption
-        $mail->Port = 587; // TLS port
+        $mail->Username = 'horizoniot2023@gmail.com';  // your Gmail
+        $mail->Password = 'jcen qhlp muwv xpkp';          // your 16-character App Password (no spaces)
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
 
-        // Email settings
-        $mail->setFrom('info@horizoniotltd.com', 'Horizon IoT LTD');
-        $mail->addAddress('info@horizoniotltd.com'); // where messages are received
+        // Email setup
+        $mail->setFrom('horizoniot2023@gmail.com', 'Horizon IoT LTD');
+        $mail->addAddress('horizoniot2023@gmail.com'); // where messages are received
         $mail->addReplyTo($email, $name);
 
         $mail->isHTML(true);
@@ -41,29 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p><strong>Message:</strong><br>{$message}</p>
         ";
 
-        // Send to your inbox
         $mail->send();
-
-        // Optional confirmation email to sender
-        $confirm = new PHPMailer(true);
-        $confirm->isSMTP();
-        $confirm->Host = 'mail.horizoniotltd.com';
-        $confirm->SMTPAuth = true;
-        $confirm->Username = 'info@horizoniotltd.com';
-        $confirm->Password = 'HorizonIoT43!';
-        $confirm->SMTPSecure = 'tls';
-        $confirm->Port = 587;
-        $confirm->setFrom('info@horizoniotltd.com', 'Horizon IoT LTD');
-        $confirm->addAddress($email, $name);
-        $confirm->isHTML(true);
-        $confirm->Subject = 'Thank You for Contacting Horizon IoT LTD';
-        $confirm->Body = "
-            <p>Hi <strong>{$name}</strong>,</p>
-            <p>Thank you for contacting <strong>Horizon IoT LTD</strong>. We’ve received your message and will get back to you shortly.</p>
-            <hr>
-            <p><em>This is an automated confirmation email — please don’t reply.</em></p>
-        ";
-        $confirm->send();
 
         echo "<script>alert('✅ Message sent successfully! Thank you for contacting us.'); window.history.back();</script>";
 
