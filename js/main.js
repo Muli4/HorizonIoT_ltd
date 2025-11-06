@@ -1,5 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
   // ======================
+// PRELOADER
+// ======================
+const preloader = document.getElementById("preloader");
+
+// Wait for all page resources (images, scripts, etc.) to load
+window.addEventListener("load", () => {
+  if (preloader) {
+    // Keep preloader for 20 seconds, then fade out
+    setTimeout(() => {
+      preloader.classList.add("fade-out");
+      setTimeout(() => {
+        preloader.style.display = "none";
+      }, 600); // Matches the fade transition in CSS
+    }, 20000); // 20000ms = 20 seconds
+  }
+});
+
+  // ======================
   // Menu Toggle & Dropdown on Mobile
   // ======================
   const menuToggle = document.getElementById('menu-toggle');
