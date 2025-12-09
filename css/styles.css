@@ -382,15 +382,18 @@ body {
     box-shadow: none;
     background: var(--color-white);
     color: var(--color-text);
+    max-height: 400px; /* adjust height for scroll */
+    overflow-y: auto; /* scroll if content too long */
+    transition: max-height 0.3s ease;
   }
 
   .navbar ul li.dropdown.open .mega-menu {
-    display: flex;
+    display: block;
   }
 
   .navbar .mega-menu .mega-column {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     animation: none;
     opacity: 1;
     transform: none;

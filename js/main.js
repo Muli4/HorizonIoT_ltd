@@ -13,33 +13,72 @@ window.addEventListener("load", () => {
       setTimeout(() => {
         preloader.style.display = "none";
       }, 600); // Matches the fade transition in CSS
-    }, 20000); // 20000ms = 20 seconds
+    }, 2500); // 20000ms = 20 seconds
   }
 });
 
-  // ======================
-  // Menu Toggle & Dropdown on Mobile
-  // ======================
-  const menuToggle = document.getElementById('menu-toggle');
-  const navbar = document.getElementById('navbar');
-  const dropdownLinks = document.querySelectorAll('.dropdown > a');
+// ======================
+// Menu Toggle & Dropdown on Mobile/Desktop
+// ======================
+const menuToggle = document.getElementById('menu-toggle');
+const navbar = document.getElementById('navbar');
+const dropdowns = document.querySelectorAll('.dropdown');
 
-  menuToggle?.addEventListener('click', () => {
-    navbar?.classList.toggle('active');
-    menuToggle.classList.toggle('active');
+// 🔹 Mobile Menu Toggle
+menuToggle?.addEventListener('click', () => {
+  navbar?.classList.toggle('active');
+  menuToggle.classList.toggle('active');
 
-    // ✅ Always show header when menu is open
-    document.body.classList.remove('header-hidden');
+  // Close all dropdowns
+  dropdowns.forEach(dd => dd.classList.remove('open'));
+
+  document.body.classList.remove('header-hidden');
+});
+
+// 🔹 Dropdown Toggling
+dropdowns.forEach(dropdown => {
+  const link = dropdown.querySelector('a');
+
+  link.addEventListener('click', (e) => {
+    const isMobile = window.innerWidth <= 1024;
+
+    if (isMobile) {
+      e.preventDefault();
+
+      // Toggle current dropdown
+      dropdown.classList.toggle('open');
+
+      // Close all other dropdowns
+      dropdowns.forEach(other => {
+        if (other !== dropdown) other.classList.remove('open');
+      });
+    } else {
+      // Desktop behavior
+      e.preventDefault();
+      const isActive = dropdown.classList.contains('open');
+
+      // Close all other dropdowns
+      dropdowns.forEach(other => {
+        if (other !== dropdown) other.classList.remove('open');
+      });
+
+      // Toggle current dropdown
+      if (isActive) dropdown.classList.remove('open');
+      else dropdown.classList.add('open');
+    }
   });
+});
 
-  dropdownLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        link.parentElement.classList.toggle('active');
-      }
-    });
-  });
+// 🔹 Close dropdowns when clicking outside (both mobile & desktop)
+document.addEventListener('click', (event) => {
+  const clickedInsideDropdown = event.target.closest('.dropdown');
+  const clickedMenuToggle = event.target.closest('#menu-toggle');
+
+  // Only close if click is outside dropdowns and mobile menu toggle
+  if (!clickedInsideDropdown && !clickedMenuToggle) {
+    dropdowns.forEach(dd => dd.classList.remove('open'));
+  }
+});
 
   // ======================
   // Scroll Header Hide/Show (Fixed for Mobile)
